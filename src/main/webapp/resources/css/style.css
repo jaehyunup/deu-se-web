@@ -1,0 +1,240 @@
+@charset "UTF-8";
+
+html {
+	font-size: 13px;
+}
+
+/*탑바*/
+ul.topbar {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+li.topbar {
+	display: inline;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	float: left;
+}
+
+
+/*보드*/
+.boardstyle {
+	padding: 3%;
+}
+
+.board1 {
+	background-color: #165F8C;
+}
+
+.board2 {
+	background-color: #1F80A6;
+}
+
+.board3 {
+	background-color: #719ECA;
+}
+
+.board4 {
+	background-color: #4284B4;
+}
+
+
+.boardsubtext {
+	font-size: 1.0rem;
+	font-family: 'Noto Sans KR';
+	color: #FFFFFF;
+	font-weight: 400;
+}
+
+.bottomslider {
+	content-align: center;
+	text-align: center;
+}
+
+.whitebackground {
+	background-color: rgba(255, 255, 255, 0.6);
+}
+
+.bluebackground {
+	background-color: #2b3956;
+}
+
+.carousel-caption {
+	max-width: 100%;
+	width: 100%;
+	left: 0 !important;
+	bottom: 15% !important;
+}
+
+.footerdesign {
+	background-color: #2b3956 !important;
+	color: #FFF !important;
+}
+
+/*드롭다운 메뉴바*/
+.navbar-default .navbar-nav>li.dropdown:hover>a, .navbar-default .navbar-nav>li.dropdown:hover>a:hover,
+	.navbar-default .navbar-nav>li.dropdown:hover>a:focus {
+	background-color: rgb(231, 231, 231);
+	color: rgb(85, 85, 85);
+}
+
+li.dropdown:hover>.dropdown-menu {
+	display: block;
+}
+
+.navbar-default {
+	background-color: teal;
+	background-image: none;
+	background-repeat: no-repeat;
+}
+
+/* 상단 햄버거 아이콘*/
+.navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(11,61,145,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+
+ul > li.nav-item.active{
+	background-color:#0b3d92;
+	border-radius:3px;
+}
+
+ul > li.nav-item.active > a{
+	color:#fff;
+}
+
+/*메인 메뉴 패딩*/
+li.nav-item {
+	padding-left: 20px;
+	padding-right: 20px;
+	font-family: 'Noto Sans KR';
+	font-size: 1.2rem;
+	font-weight: 700 !important;
+	color: #333;
+}
+
+/* 홈제외 메뉴 사이드바 */
+.nav-link {
+	color: #333;
+	font-weight: 500;
+}
+
+.nav-link:hover {
+	background-color:#0b3d92;
+	border-radius:3px;
+	color:#fff;
+}
+
+
+
+
+#maincarousel{
+	
+}
+
+#menunav{
+	 background-color: #fff;
+	 z-index:30;
+}
+
+
+
+
+.captionheader{
+	color:#ffffff;
+}
+
+
+/* 매 페이지 캐러셀 이미지의 캡션*/
+.pagetitle {
+	font-family: 'Noto Sans KR';
+	font-size: 2.0rem !important;
+	font-weight: 500 !important;
+	margin-top :0 auto;
+	margin-bottom:0 auto;
+	color:rgba(255,255,255,0.9);
+}
+
+.pagesubtitle {
+	font-family: 'Noto Sans KR';
+	font-size: 1.3rem !important;
+	font-weight: 700 !important;
+	margin-top :0 auto;
+	margin-bottom:0 auto;
+	color:#a7c9ff;
+}
+
+/*페이지 탭 */
+.tabs{
+  margin-top:5%;
+}
+
+.tabs .tab-pane{
+	
+}
+
+.tab-content{
+	padding-top:5%;
+}
+.tabs li{
+  border-radius:3px;
+  border-color:#ccc;
+  border-style:solid;
+  border-width:1px;
+  font-family:'Noto Sans KR';
+  font-size:1rem;
+  background-color:#fff;
+  padding:10px 15px 10px 15px;
+  margin-left:3px;
+  margin-right:3px;  
+}
+
+.tabs li > a {
+  color:#333;
+}
+
+#tab_a {
+	background-color:#fff;
+}
+
+
+footer{
+    bottom: 0;
+    width: 100%;
+}
+
+/*학과연혁타임라인*/
+ul.timeline {
+    list-style-type: none;
+    position: relative;
+}
+ul.timeline:before {
+    content: ' ';
+    background: #d4d9df;
+    display: inline-block;
+    position: absolute;
+    left: 29px;
+    width: 2px;
+    height: 100%;
+    z-index: 400;
+}
+ul.timeline > li {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+ul.timeline > li:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #22c0e8;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+}

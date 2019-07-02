@@ -1,0 +1,66 @@
+package com.deu.webapp.controller;
+
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+/**
+ * Handles requests for the application home page.
+ */
+@Controller
+public class HomeController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	
+	/* 첫화면 .*/
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String hello(Locale locale, Model model) {
+		logger.info("사용자 접속확인, 접속위치:", locale);
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		String formattedDate = dateFormat.format(date);
+		model.addAttribute("serverTime", formattedDate );
+		return "home";
+		//return.
+	}
+	
+	
+	/* home .*/
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public String home(Locale locale, Model model) {
+		return "home";
+		//return.
+	}
+	
+	 /* 학과 소개*/
+	@RequestMapping(value = "/overview", method = RequestMethod.GET)
+	public String overview(Locale locale, Model model) {
+			
+		return "overview";
+		//return.
+	}
+	/* 학과 소개*/
+	@RequestMapping(value = "/intention", method = RequestMethod.GET)
+	public String intention(Locale locale, Model model) {
+			
+		return "intention";
+		//return
+	}
+	
+	/* 학과 소개*/
+	@RequestMapping(value = "/roadmap", method = RequestMethod.GET)
+	public String roadmap(Locale locale, Model model) {
+			
+		return "roadmap";
+		//return
+	}
+	 
+	
+}
