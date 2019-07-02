@@ -52,7 +52,7 @@
 					홈</a></li>
 			<li class="nav-item dropdown active"><a
 				class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
-				aria-haspopup="true" aria-expanded="false" href="overview"> 학과소개
+				aria-haspopup="true" aria-expanded="false" href="overview"> 학과 안내
 			</a>
 				<div class="dropdown-menu" aria-labelledby="dropdown1">
 					<a class="dropdown-item submenutext" href="overview">학과 소개</a> <a
@@ -126,7 +126,7 @@
 		<!-- 왼쪽 사이드바는 lg-2(1offset) 우측콘텐츠는 lg-8 로 한다. -->
 		<div class="col-lg-2 hidden-md-down offset-lg-1"
 				style="padding-left: 1%; padding-right: 1%;">
-			<div class="sidebartitle">학과 소개</div>
+			<div class="sidebartitle">학과 안내</div>
 			<!-- Vertical Menu-->
 			<nav class="nav flex-column bg-white rounded p-3"> 
 			<a href="overview"

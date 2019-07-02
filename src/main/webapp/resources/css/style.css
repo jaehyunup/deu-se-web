@@ -170,7 +170,7 @@ li.nav-item {
 
 /*페이지 탭 */
 .tabs{
-  margin-top:5%;
+  margin-top:3%;
 }
 
 .tabs .tab-pane{
@@ -237,4 +237,29 @@ ul.timeline > li:before {
     width: 20px;
     height: 20px;
     z-index: 400;
+}
+
+
+.navigator{
+	font-family:'Noto Sans KR';
+	padding-left:2% !important;
+	padding-top:2% !important;
+	
+	color:#333 !important;
+	padding-bottom:2% !important;
+	padding-right:2% !important;
+	margin-bottom:3% !important;
+	border-bottom:5px solid #333;
+}
+
+.navigator > a{
+	font-size:0.4rem;
+	float:right;
+	bottom:0;
+}
+
+.navigator > a.title{
+	font-size:1.8rem;
+	font-weight:500;
+	float:left;
 }

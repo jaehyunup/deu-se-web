@@ -53,7 +53,7 @@
 				href="/webapp/home"> 홈</a></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
-				aria-haspopup="true" aria-expanded="false" href="overview"> 학과소개
+				aria-haspopup="true" aria-expanded="false" href="overview"> 학과 안내
 			</a>
 				<div class="dropdown-menu" aria-labelledby="dropdown1">
 					<a class="dropdown-item submenutext" href="overview">학과 소개</a> <a

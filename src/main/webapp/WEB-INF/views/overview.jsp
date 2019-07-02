@@ -52,7 +52,7 @@
 					홈</a></li>
 			<li class="nav-item dropdown active"><a
 				class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
-				aria-haspopup="true" aria-expanded="false" href="overview"> 학과소개
+				aria-haspopup="true" aria-expanded="false" href="overview"> 학과 안내
 			</a>
 				<div class="dropdown-menu" aria-labelledby="dropdown1">
 					<a class="dropdown-item submenutext" href="overview">학과 소개</a> <a
@@ -127,11 +127,11 @@
 		<!-- 왼쪽 사이드바는 lg-3 xs-12 로 한다. -->
 		<div class="col-lg-2 hidden-md-down offset-lg-1"
 			style="padding-left: 1%; padding-right: 1%;">
-			<div class="sidebartitle">학과 소개</div>
+			<div class="sidebartitle">학과 안내</div>
 			<!-- Vertical Menu-->
 			<nav class="nav flex-column bg-white rounded p-3"> <a href="overview"
 				class="nav-link px-4 py-3 active bg-info text-white my-1 shadow-sm rounded-pill sidebarmenu">
-				<i class="fas fa-university"></i> 학과 소개
+				<i class="fas fa-university"></i> 학과 소개 
 			</a> <a href="intention" class="nav-link shadow-sm my-1 py-3 px-4 rounded-pill sidebarmenu"> <i
 				class="fas fa-graduation-cap"></i> 교육 목표
 			</a> <a href="roadmap" class="nav-link shadow-sm my-1 py-3 px-4 rounded-pill sidebarmenu"> <i
@@ -145,7 +145,8 @@
 				class="fa fa-line-chart mr-2"></i> Action here
 			</a> <a href="#" class="nav-link px-4 disabled"> <i
 				class="fa fa-pie-chart mr-2"></i> Disabled link
-			</a> --> </nav>
+			</a> -->
+			 </nav>
 			<!-- End -->
 		</div>
 
@@ -154,6 +155,10 @@
 			<div class="tabs">
 				<div class="container">
 					<div class="row">
+						<div class="col-xl-12 navigator">
+							<a class="title"><i class="fas fa-university"></i>&nbsp;&nbsp;학과소개</a>
+							<a>홈 > 학과안내 > 학과소개</a>
+						</div>
 						<div class="col-xl-12">
 							<ul class="nav nav-pills">
 								<li class="active"><a href="#tab_a" data-toggle="pill">
