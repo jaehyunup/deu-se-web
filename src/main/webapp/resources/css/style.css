@@ -263,3 +263,30 @@ ul.timeline > li:before {
 	font-weight:500;
 	float:left;
 }
+
+table{
+	font-family:'Noto Sans KR';
+	
+}
+
+.courseaim{
+	color:#2b3956;
+	font-weight:700;
+	font-size:2rem;
+}
+
+.text10{
+	color:#2b3956;
+	font-weight:700;
+	font-size:2rem;
+}
+
+span > strong{
+	color:#333;
+	font-weight:800;
+	font-size:1.0rem;
+}
+
+tr {
+    padding: 4px;
+}

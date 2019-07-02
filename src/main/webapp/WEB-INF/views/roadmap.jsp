@@ -55,8 +55,8 @@
 					홈</a></li>
 			<li class="nav-item dropdown active"><a
 				class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
-				aria-haspopup="true" aria-expanded="false" href="overview"> 학과 안내
-			</a>
+				aria-haspopup="true" aria-expanded="false" href="overview"> 학과
+					안내 </a>
 				<div class="dropdown-menu" aria-labelledby="dropdown1">
 					<a class="dropdown-item submenutext" href="overview">학과 소개</a> <a
 						class="dropdown-item submenutext" href="intention">교육 목표</a> <a
@@ -132,75 +132,70 @@
 			style="padding-left: 1%; padding-right: 1%;">
 			<div class="sidebartitle">학과 안내</div>
 			<!-- Vertical Menu-->
-			<nav class="nav flex-column bg-white rounded p-3"> <a href="overview"
+			<nav class="nav flex-column bg-white rounded p-3"> <a
+				href="overview"
 				class="nav-link px-4 shadow-sm py-3 my-1 rounded-pill sidebarmenu">
 				<i class="fas fa-university"></i> 학과 소개
-			</a> <a href="intention" class="nav-link px-4 py-3 shadow-sm my-1 rounded-pill sidebarmenu"> <i
-				class="fas fa-graduation-cap"></i> 교육 목표
-			</a> <a href="#" class="active bg-info text-white shadow-sm my-1 py-3 nav-link px-4 rounded-pill sidebarmenu"> <i
-				class="fas fa-archway"></i> 학과 커리큘럼
-			</a> <!-- <a href="#" class="nav-link px-4 rounded-pill"> <i
-				class="fa fa-area-chart mr-2"></i> Action here <span
-				class="badge badge-primary px-2 rounded-pill ml-2">32</span>
-			</a> <a href="#" class="nav-link px-4 rounded-pill"> <i
-				class="fa fa-th-large mr-2"></i> Another action here
-			</a> <a href="#" class="nav-link px-4 rounded-pill"> <i
-				class="fa fa-line-chart mr-2"></i> Action here
-			</a> <a href="#" class="nav-link px-4 disabled"> <i
-				class="fa fa-pie-chart mr-2"></i> Disabled link
-			</a> --> </nav>
+			</a> <a href="intention"
+				class="nav-link px-4 py-3 shadow-sm my-1 rounded-pill sidebarmenu">
+				<i class="fas fa-graduation-cap"></i> 교육 목표
+			</a> <a href="#"
+				class="active bg-info text-white shadow-sm my-1 py-3 nav-link px-4 rounded-pill sidebarmenu">
+				<i class="fas fa-archway"></i> 학과 커리큘럼
+			</a> </nav>
 			<!-- End -->
 		</div>
 
 		<div class="col-lg-8 col-xs-12">
 			<div class="tabs">
-				<div class="container">
-					<!--페이지 네비게이터(콘텐츠 탭 윗부분)-->
+				<div class="container-fulid">
 					<div class="row mx-0">
-					
-					</div>
-				
-					<div class="row mx-0">
+						<!--페이지 네비게이터(콘텐츠 탭 윗부분)-->
+						<div class="col-xl-12 navigator">
+							<a class="title"><i class="fas fa-archway"></i>&nbsp;&nbsp;학과커리큘럼</a>
+							<a>홈 > 학과안내 > 학과커리큘럼</a>
+						</div>
 						<div class="col-xs-12">
 							<ul class="nav nav-pills">
-								<li class="active">
-									<a href="#tab_a" data-toggle="pill">
-									 최신교육과정 편성표
-									 </a>
-								</li>
-								<li>
-									<a href="#tab_b" data-toggle="pill">
-										학과과정 연계표
-									</a>
-								</li>
+								<li class="active"><a href="#tab_a" data-toggle="pill">
+										최신교육과정 편성표 </a></li>
+								<li><a href="#tab_b" data-toggle="pill"> 학과과정 연계표 </a></li>
 							</ul>
 						</div>
 					</div>
-					
+
+					<!-- 콘텐츠 탭 행 a=전공과목연계표, b=교과과정 , c = 교과개요 -->
 					<div class="row">
-						<div class="col-xl-12 mx-0" style="min-height:300px">
+						<div class="col-xl-12 mx-0" style="min-height: 300px">
 							<div class="tab-content">
 								<div class="tab-pane fade show active" id="tab_a">
 									<div class="col-xl-12 align-middle ">
-										<iframe src="<c:url value="/resources/images/2019curriculum.pdf"/>" 
-											style="margin-left:auto 0;margin-right:auto 0;width:100%; height:130vh;" frameborder="0">
-										</iframe>
+										<iframe
+											src="<c:url value="/resources/images/2019curriculum.pdf"/>"
+											style="margin-left: auto 0; margin-right: auto 0; width: 100%; height: 130vh;"
+											frameborder="0"> </iframe>
 
 									</div>
 								</div>
+
 								<div class="tab-pane" id="tab_b">
 									<div class="container-fluid mb-5">
 										<div class="row">
 											<div class="col-md-12">
-												<img src="<c:url value="/resources/images/2019seroadmap.gif" />" 
-													class="img-fluid" alt="1">
-												<img src="<c:url value="/resources/images/2019seroadmap_2.gif" />" 
-													class="img-fluid" alt="2">	
+												<img
+													src="<c:url value="/resources/images/2019seroadmap.gif" />"
+													class="img-fluid" alt="1"> <img
+													src="<c:url value="/resources/images/2019seroadmap_2.gif" />"
+													class="img-fluid" alt="2">
 											</div>
 										</div>
 									</div>
-
 								</div>
+
+		
+
+
+
 							</div>
 						</div>
 					</div>
@@ -218,62 +213,64 @@
 	<!-- 푸터 -->
 	<div
 		class="position-relative page-footer font-small footerdesign pt-3 mt-5">
-	<!-- Footer Links -->
-	<div class="container text-center text-md-left">
+		<!-- Footer Links -->
+		<div class="container text-center text-md-left">
 
-		<!-- Grid row -->
-		<div class="row">
+			<!-- Grid row -->
+			<div class="row">
 
-			<!-- Grid column -->
-			<div class="col-md-8">
+				<!-- Grid column -->
+				<div class="col-md-8">
 
-				<!-- Content -->
+					<!-- Content -->
 
-				<h4 class="bold" style="margin-bottom: 5%;">컴퓨터 소프트웨어공학과</h4>
-				<p>47340 부산광역시 부산진구 엄광로 176 (가야동) 정보공학관 9층</p>
-				<p>Tel.051-890-1114 Fax.051-890-123</p>
+					<h4 class="bold" style="margin-bottom: 5%;">컴퓨터 소프트웨어공학과</h4>
+					<p>47340 부산광역시 부산진구 엄광로 176 (가야동) 정보공학관 9층</p>
+					<p>Tel.051-890-1114 Fax.051-890-123</p>
 
+
+				</div>
+				<!-- Grid column -->
+
+				<hr class="clearfix w-100 d-md-none pb-3">
+
+				<!-- Grid column -->
+				<div class="col-md-2">
+
+					<!-- Links -->
+					<h4 class="bold" style="margin-bottom: 10%;">관련 링크</h4>
+
+					<ul class="list-unstyled">
+						<li style="margin-bottom: 1%;"><a href="https://deu.ac.kr">동의대학교
+								홈페이지</a></li>
+						<li style="margin-bottom: 1%;"><a href="#!">입학정보</a></li>
+
+					</ul>
+
+				</div>
+				<!-- Grid column -->
+
+				<!-- Grid column -->
+				<div class="col-md-2">
+
+					<!-- Links -->
+					<h4 class="bold" style="margin-bottom: 10%;">학과 SNS</h4>
+
+					<ul class="list-unstyled">
+						<li style="margin-bottom: 1%;"><a href="#!">Instagram</a></li>
+						<li style="margin-bottom: 1%;"><a href="#!">Facebook</a></li>
+					</ul>
+
+				</div>
+				<!-- Grid column -->
 
 			</div>
-			<!-- Grid column -->
-
-			<hr class="clearfix w-100 d-md-none pb-3">
-
-			<!-- Grid column -->
-			<div class="col-md-2">
-
-				<!-- Links -->
-				<h4 class="bold" style="margin-bottom: 10%;">관련 링크</h4>
-
-				<ul class="list-unstyled">
-					<li style="margin-bottom: 1%;"><a href="https://deu.ac.kr">동의대학교
-							홈페이지</a></li>
-					<li style="margin-bottom: 1%;"><a href="#!">입학정보</a></li>
-
-				</ul>
-
-			</div>
-			<!-- Grid column -->
-
-			<!-- Grid column -->
-			<div class="col-md-2">
-
-				<!-- Links -->
-				<h4 class="bold" style="margin-bottom: 10%;">학과 SNS</h4>
-
-				<ul class="list-unstyled">
-					<li style="margin-bottom: 1%;"><a href="#!">Instagram</a></li>
-					<li style="margin-bottom: 1%;"><a href="#!">Facebook</a></li>
-				</ul>
-
-			</div>
-			<!-- Grid column -->
+			<!-- Grid row -->
 
 		</div>
-		<!-- Grid row -->
-
-	</div>
-	<!-- Footer Links --> <!-- Copyright --> <!-- Copyright --> 
+		<!-- Footer Links -->
+		<!-- Copyright -->
+		<!-- Copyright -->
 	</div>
 
 

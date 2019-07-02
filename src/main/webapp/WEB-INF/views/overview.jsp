@@ -136,16 +136,7 @@
 				class="fas fa-graduation-cap"></i> 교육 목표
 			</a> <a href="roadmap" class="nav-link shadow-sm my-1 py-3 px-4 rounded-pill sidebarmenu"> <i
 				class="fas fa-archway"></i> 학과 커리큘럼
-			</a> <!-- <a href="#" class="nav-link px-4 rounded-pill"> <i
-				class="fa fa-area-chart mr-2"></i> Action here <span
-				class="badge badge-primary px-2 rounded-pill ml-2">32</span>
-			</a> <a href="#" class="nav-link px-4 rounded-pill"> <i
-				class="fa fa-th-large mr-2"></i> Another action here
-			</a> <a href="#" class="nav-link px-4 rounded-pill"> <i
-				class="fa fa-line-chart mr-2"></i> Action here
-			</a> <a href="#" class="nav-link px-4 disabled"> <i
-				class="fa fa-pie-chart mr-2"></i> Disabled link
-			</a> -->
+			</a> 
 			 </nav>
 			<!-- End -->
 		</div>
@@ -153,8 +144,8 @@
 		
 		<div class="col-lg-8 col-xs-12">
 			<div class="tabs">
-				<div class="container">
-					<div class="row">
+				<div class="container-fulid">
+					<div class="row mx-0">
 						<div class="col-xl-12 navigator">
 							<a class="title"><i class="fas fa-university"></i>&nbsp;&nbsp;학과소개</a>
 							<a>홈 > 학과안내 > 학과소개</a>
