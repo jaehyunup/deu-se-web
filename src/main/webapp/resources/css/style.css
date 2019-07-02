@@ -266,27 +266,59 @@ ul.timeline > li:before {
 
 table{
 	font-family:'Noto Sans KR';
+	font-size:1.1rem;
 	
 }
 
 .courseaim{
-	color:#2b3956;
-	font-weight:700;
-	font-size:2rem;
+	color:#333;
+	display:inline-block;
+	padding-left:2%;
+	padding-right:2%;
+	font-weight:900;
+	font-size:3rem;
+	
 }
 
+.aimcontainer{
+	display:block;
+	padding:2%;
+	background-color:#fff;
+	border-radius:3px;
+	border:1px solid fff;
+	shadow:1px;
+	margin-bottom:-10%;
+}
+
+
+
 .text10{
+	display:inline-block;
+	padding-left:1%;
+	padding-right:1%;
 	color:#2b3956;
-	font-weight:700;
-	font-size:2rem;
+	font-weight:900;
+	font-size:2.5rem;
+	border-top:5px solid #2b3956;
 }
 
 span > strong{
-	color:#333;
+	color:#2b3956;
 	font-weight:800;
-	font-size:1.0rem;
+	font-size:1.4rem;
 }
 
-tr {
-    padding: 4px;
+
+tr,td {
+    padding: 10px;
+    margin:10px;
+}
+
+.aimbackground{
+	background-image:url("../images/software.jpg");
+	overflow: hidden; 
+	object-fit: cover; 
+	object-position: center;
+	margin-bottom:5%;
+	padding:3.5%;
 }

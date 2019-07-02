@@ -59,7 +59,7 @@
 					안내 </a>
 				<div class="dropdown-menu" aria-labelledby="dropdown1">
 					<a class="dropdown-item submenutext" href="overview">학과 소개</a> <a
-						class="dropdown-item submenutext" href="intention">교육 목표</a> <a
+						class="dropdown-item submenutext" href="intention">교과 개요</a> <a
 						class="dropdown-item submenutext" href="roadmap">학과 커리큘럼</a>
 				</div></li>
 
@@ -112,7 +112,7 @@
 					<img class="w-100"
 						src="<c:url value="/resources/images/subslider.jpg" />"
 						alt="Second slide"
-						style="max-height: 180px; overflow: hidden; object-fit: none; object-position: center;">
+						style="max-height: 180px; overflow: hidden; object-fit: cover; object-position: center;">
 					<div class="carousel-caption d-xl-block  ">
 						<div class="pagesubtitle">GLOBAL LEADER</div>
 						<div class="pagetitle">창의적인 글로벌 소프트웨어 인재 육성학과</div>
@@ -138,7 +138,7 @@
 				<i class="fas fa-university"></i> 학과 소개
 			</a> <a href="intention"
 				class="nav-link px-4 py-3 shadow-sm my-1 rounded-pill sidebarmenu">
-				<i class="fas fa-graduation-cap"></i> 교육 목표
+				<i class="fas fa-graduation-cap"></i> 교과 개요
 			</a> <a href="#"
 				class="active bg-info text-white shadow-sm my-1 py-3 nav-link px-4 rounded-pill sidebarmenu">
 				<i class="fas fa-archway"></i> 학과 커리큘럼
