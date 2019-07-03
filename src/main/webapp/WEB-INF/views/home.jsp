@@ -63,14 +63,14 @@
 
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
-				aria-haspopup="true" aria-expanded="false" href="overview"> 입학안내
+				aria-haspopup="true" aria-expanded="false" href="http://ipsi.deu.ac.kr/main/default.asp"> 입학안내
 			</a>
 				<div class="dropdown-menu" aria-labelledby="dropdown2">
-					<a class="dropdown-item submenutext" href="#">학부</a> <a
-						class="dropdown-item submenutext" href="#">대학원</a>
+					<a class="dropdown-item submenutext" href="http://ipsi.deu.ac.kr/main/default.asp">학부</a> <a
+						class="dropdown-item submenutext" href="https://grd.deu.ac.kr/grd/content/9">대학원</a>
 				</div></li>
-			<li class="nav-item"><a class="nav-link menutext" href="#home">
-					공학인증 </a></li>
+			<li class="nav-item"><a class="nav-link menutext" href="abeek">
+					공학인증제도 </a></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
 				aria-haspopup="true" aria-expanded="false" href="overview"> 교수진

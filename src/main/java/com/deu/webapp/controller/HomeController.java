@@ -54,11 +54,27 @@ public class HomeController {
 		//return
 	}
 	
-	/* 학과 소개*/
+	/* 학과커리큘럼*/
 	@RequestMapping(value = "/roadmap", method = RequestMethod.GET)
 	public String roadmap(Locale locale, Model model) {
 			
 		return "roadmap";
+		//return
+	}
+	
+	/* 입학안내*/
+	@RequestMapping(value = "/abeek", method = RequestMethod.GET)
+	public String abeek(Locale locale, Model model) {
+			
+		return "abeek";
+		//return
+	}
+	
+	/* 입학안내*/
+	@RequestMapping(value = "/abeekrule", method = RequestMethod.GET)
+	public String abeekrule(Locale locale, Model model) {
+			
+		return "abeekrule";
 		//return
 	}
 	 
