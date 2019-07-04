@@ -16,9 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class HomeController {
-	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
 	/* 첫화면 .*/
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String hello(Locale locale, Model model) {
@@ -30,7 +28,6 @@ public class HomeController {
 		return "home";
 		//return.
 	}
-	
 	
 	/* home .*/
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
