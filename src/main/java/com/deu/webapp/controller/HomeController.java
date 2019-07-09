@@ -2,6 +2,7 @@ package com.deu.webapp.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import org.slf4j.Logger;
@@ -11,12 +12,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.deu.webapp.VO.BoardVO;
+import com.deu.webapp.service.BoardService;
+
 /**
  * Handles requests for the application home page.
  */
 @Controller
 public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+
 	/* 첫화면 .*/
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String hello(Locale locale, Model model) {
@@ -74,6 +79,8 @@ public class HomeController {
 		return "abeekrule";
 		//return
 	}
+	
+	
 	 
 	
 }

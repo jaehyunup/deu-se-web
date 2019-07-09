@@ -5,26 +5,26 @@ import java.util.List;
 import javax.inject.Inject;
 
 import com.deu.webapp.DAO.BoardDAO;
-import com.deu.webapp.VO.boardVO;
+import com.deu.webapp.VO.BoardVO;
 import org.springframework.stereotype.Service;
 
 @Service
 public class BoardServiceImpl implements BoardService {
 	@Inject
 	private BoardDAO dao; // 데이터 엑세스 오브젝트 (VO를 가지고실질적 데이터에 접근함)
-	
+
 	@Override
-	public void create(boardVO vo) throws Exception {
+	public void create(BoardVO vo) throws Exception {
 		dao.create(vo);
 	}
 
 	@Override
-	public List<boardVO> listAll() throws Exception {
+	public List<BoardVO> listAll() throws Exception {
 		return dao.listAll();
 	}
 
 	@Override
-	public boardVO read(Integer postno) throws Exception {
+	public BoardVO read(Integer postno) throws Exception {
 		// TODO Auto-generated method stub
 		return dao.read(postno);
 	}
@@ -36,7 +36,7 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public void update(boardVO vo) throws Exception {
+	public void update(BoardVO vo) throws Exception {
 		dao.update(vo);
 	}
 

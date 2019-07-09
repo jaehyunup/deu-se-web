@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.deu.webapp.mappers.boardMapper"> 
 
-<mapper namespace="com.deu.webapp.DAO.BoardDAO"> 
-
-	 <!--
-		namespace =맵퍼별명
-		
+	 <!--		
 	  MyBatis 
 	 게시판관련 CRUD의 실질적 시퀄문이 여기에 저장됨 -->
-	 
-	 
+	  
 	 <!-- 글삽입 -->
     <insert id="insertBoard">
         insert into NOTICE (posttitle,postwriter,postmemo) 
@@ -16,15 +15,13 @@
     </insert>
 
 	<!-- 글 전체 조회 -->
-    <select id="listBoard" resultType="com.deu.webapp.VO.boardVO">
-    <![CDATA[
-        select * from NOTICE 
-        order by postitle DESC
-    ]]>
+    <select id="listBoard" resultType="BoardVO">
+        select * 
+        from NOTICE 
     </select>
     
     <!-- 해당 글 상세 가져오기(postno에 해당하는칼럼 다가져옴) -->
-    <select id="detailBoard" resultType="com.deu.webapp.VO.boardVO">
+    <select id="detailBoard" resultType="BoardVO">
             select * from NOTICE where postno = #{postno}
     </select>
  

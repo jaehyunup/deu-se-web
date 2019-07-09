@@ -1,17 +1,18 @@
 package com.deu.webapp.VO;
 
-public class boardVO {
-	private String postno, posttitle, postwriter,postmemo,postdate;
+public class BoardVO {
+	private int postno;
+	private String posttitle, postwriter,postmemo,postdate;
 
-    public String getPostno() {
-              return postno;
+  
 
-    }
+	public int getPostno() {
+		return postno;
+	}
 
-    public void setPostno(String postno) {
-              this.postno = postno;
-
-    }
+	public void setPostno(int postno) {
+		this.postno = postno;
+	}
 
 	public String getPosttitle() {
 		return posttitle;
@@ -35,6 +36,14 @@ public class boardVO {
 
 	public void setPostmemo(String postmemo) {
 		this.postmemo = postmemo;
+	}
+
+	public String getPostdate() {
+		return postdate;
+	}
+
+	public void setPostdate(String postdate) {
+		this.postdate = postdate;
 	}
 
     
