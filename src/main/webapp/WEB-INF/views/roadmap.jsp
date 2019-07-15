@@ -92,8 +92,8 @@
 				aria-haspopup="true" aria-expanded="false" href="overview"> 게시판
 			</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					<a class="dropdown-item submenutext" href="#">공지사항</a> <a
-						class="dropdown-item submenutext" href="#">공모전/취업정보</a>
+					<a class="dropdown-item submenutext" href="notice">공지사항</a> <a
+						class="dropdown-item submenutext" href="notice">공모전/취업정보</a>
 				</div></li>
 		</ul>
 	</div>

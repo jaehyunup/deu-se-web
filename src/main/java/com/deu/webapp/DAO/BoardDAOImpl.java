@@ -3,6 +3,8 @@ package com.deu.webapp.DAO;
 import java.util.List;
 
 import com.deu.webapp.VO.BoardVO;
+import com.deu.webapp.VO.Criteria;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -28,7 +30,7 @@ public class BoardDAOImpl implements BoardDAO {
 
 	@Override
 	public BoardVO read(Integer postno) throws Exception {
-		return sqlSession.selectOne(namespace+".detailBoard");
+		return sqlSession.selectOne(namespace+".detailBoard",postno);
 	}
 
 	@Override
@@ -42,4 +44,8 @@ public class BoardDAOImpl implements BoardDAO {
 		sqlSession.update(namespace+".updateBoard", vo);
 	}
 
+	@Override
+	public List<BoardVO> listCriteria(Criteria criteria) throws Exception {
+	    return sqlSession.selectList(namespace + ".listCriteria", criteria);
+	}
 }

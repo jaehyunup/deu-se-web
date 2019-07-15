@@ -26,9 +26,6 @@
 <!--import PDF Viewer (pdfjs) -->
 <script src="<c:url value="/resources/js/pdfjs/build/pdf.js" />"></script>
 
-<!-- import custom js -->
-<script type="text/javascript" src="<c:url value="/resources/js/main.js" />"></script>
-
 <title>동의대학교 컴퓨터소프트웨어 공학과</title>
 </head>
 
@@ -43,13 +40,13 @@
 		aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
-	<a class="navbar-brand flex-lg-row" href="/webapp/					
-		class="d-inline-block"> <img src="<c:url value="/resources/images/logo.png" />"
+	<a class="navbar-brand flex-lg-row" href="/webapp/home"
+		class="d-inline-block"> <img src="resources/images/logo.png"
 		style="width: 35%; height: auto;" alt="" /> <span class="navbar-text"
 		style="color: rgba(44, 44, 44, 0.9); border-left: 1px solid #999; margin-left: 2%; padding-left: 4%; font-size: 1.1rem; font-family: 'Noto Sans KR'; font-weight: 400 !important;">
 			컴퓨터소프트웨어공학과</span>
 	</a> </nav>
-	
+
 	<!--메뉴 네비바 -->
 	<nav id="menunav" class="navbar float-top navbar-expand-lg">
 	<div class="collapse navbar-collapse" id="navbarText">
@@ -68,7 +65,7 @@
 
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
-				aria-haspopup="true" aria-expanded="false" href="../overview"> 입학안내
+				aria-haspopup="true" aria-expanded="false" href=""> 입학안내
 			</a>
 				<div class="dropdown-menu" aria-labelledby="dropdown2">
 					<a class="dropdown-item submenutext"
@@ -80,7 +77,7 @@
 				href="../abeek"> 공학인증제도 </a></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
-				aria-haspopup="true" aria-expanded="false" href="overview"> 교수진
+				aria-haspopup="true" aria-expanded="false" href=""> 교수진
 			</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 					<a class="dropdown-item submenutext" href="#">김태석 교수님</a> <a
@@ -94,7 +91,7 @@
 				</div> </a></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
-				aria-haspopup="true" aria-expanded="false" href="overview"> 게시판
+				aria-haspopup="true" aria-expanded="false" href="list"> 게시판
 			</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 					<a class="dropdown-item submenutext" href="list">공지사항</a> <a
@@ -104,8 +101,8 @@
 	</div>
 	</nav>
 	<!-- 메뉴네비바끝 -->
-	
-	
+
+
 	<!--캐러셀(슬라이더) -->
 	<div id="maincarousel" class="carousel slide carousel-fade"
 		data-ride="carousel">
@@ -133,15 +130,14 @@
 		<div class="col-lg-2 hidden-md-down offset-lg-1"
 			style="padding-left: 1%; padding-right: 1%;">
 			<div class="sidebartitle">게시판</div>
-			<nav class="nav flex-column bg-white rounded p-3"> <a
-				href="list"
+			<nav class="nav flex-column bg-white rounded p-3"> <a href="list"
 				class="nav-link px-4 bg-info text-white shadow-sm py-3 my-1 rounded-pill sidebarmenu">
 				<i class="fas fa-university"></i>&nbsp; 공지사항
-			</a> <a href="abeekrule"
+			</a> <a href=""
 				class="nav-link px-4 py-3 shadow-sm my-1 rounded-pill sidebarmenu">
 				<i class="fas fa-graduation-cap"></i>&nbsp;공모전/취업정보
 			</a> </nav>
-		<!-- 사이드바 종료-->
+			<!-- 사이드바 종료-->
 		</div>
 
 		<!-- 메인콘텐츠 공간 -->
@@ -151,49 +147,43 @@
 					<div class="row mx-0">
 						<!--페이지 네비게이터(콘텐츠 탭 윗부분)-->
 						<div class="col-xl-12 navigator">
-							<a class="title">
-								<i class="fas fa-archway"></i>
-								&nbsp;&nbsp;공지사항</a> 
-								<a>홈 > 게시판 > 공지사항</a>
+							<a class="title"> <i class="fas fa-archway"></i>
+								&nbsp;&nbsp;공지사항
+							</a> <a>홈 > 게시판 > 공지사항 </a>
 						</div>
 						<!--메인컨텐츠 시작-->
-						<div class="col-xl-12">
-							<table class="table table-white table-hover">
-							  <thead class="thead-dark">
-							        <tr>
-							            <th style="width: 5%" scope="col">글번호</th>
-							            <th style="width: 50%" scope="col">제목</th>
-							            <th style="width: 10%" scope="col">글쓴이</th>
-							            <th style="width: 20%" scope="col">작성일자</th>
-							        </tr>
-							  </thead>
-							        <!-- forEach 문은 리스트 객체 타입을 꺼낼때 많이 활용된다. -->
-							        <c:forEach var="row" items="${list}">
-							        <tr>
-							            <!-- 컨트롤러에서 넘겨준 list 모델 객체를 쓰는 방법을 잘 익혀두자 -->
-							            <td style="width: 10%">${row.postno}</td>
-							            <td style="width: 50%">
-							            	<a href="read?postno=${row.postno}">
-							            		${row.posttitle}
-							            	</a>
-							            </td>
-							            <td style="width: 10%">${row.postwriter}</td>
-							            <td style="width: 20%">${row.postdate}</td>
-							        </tr>
-							        </c:forEach>
-							    </table>
-						</div>
-						<div class="col-xl-12">
-							<a href="writeNotice" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">게시글 작성</a>
-						</div>
+						<div class="col-lg-12">
+							<table class="table table-light table-active table-bordered">
+								<thead>
+									<tr>
+										<th class="bg-dark text-white" scope="col" colspan="1">글제목</th>
+										<td scope="col" colspan="3">${contents.posttitle}</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th class="bg-dark text-white" scope="col" colspan="1">작성자</th>
+										<td scope="col" colspan="1">${contents.postwriter}</td>
+										<th class="bg-dark text-white" scope="col" colspan="1">작성일</th>
+										<td scope="col" colspan="1">${contents.postdate}</td>
+									</tr>
+									<!-- 글 내용 -->
+									<tr>
+										<td class="bg-white" scope="col" colspan="4">${contents.postmemo}</td>
+									</tr>
+								</tbody>
+								
+							</table>
+							<a class="btn btn-info" href="list">목록으로</a>
 						
+						</div>
 						<!-- 메인컨텐츠 끝 -->
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- 메인콘텐츠 끝-->
-		
+
 	</div>
 
 
@@ -203,7 +193,8 @@
 
 
 	<!-- 푸터 -->
-	<div class="position-relative page-footer font-small footerdesign pt-3 mt-5">
+	<div
+		class="position-relative page-footer font-small footerdesign pt-3 mt-5">
 		<!-- Footer Links -->
 		<div class="container text-center text-md-left">
 			<!-- Grid row -->
@@ -234,7 +225,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 </body>
 
 </html>

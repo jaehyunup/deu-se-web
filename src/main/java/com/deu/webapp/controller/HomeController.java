@@ -18,18 +18,14 @@ import com.deu.webapp.service.BoardService;
 /**
  * Handles requests for the application home page.
  */
+@RequestMapping("/") // 해당 컨트롤러는 /board/ url 요청시에 맵핑된다. (/board/* , /board/*/* .. )
 @Controller
 public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-
-	/* 첫화면 .*/
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String hello(Locale locale, Model model) {
-		logger.info("사용자 접속확인, 접속위치:", locale);
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		String formattedDate = dateFormat.format(date);
-		model.addAttribute("serverTime", formattedDate );
+	
+	/* home .*/
+	@RequestMapping(value = "", method = RequestMethod.GET)
+	public String homeinit(Locale locale, Model model) {
 		return "home";
 		//return.
 	}

@@ -17,12 +17,28 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 글 전체 조회 -->
     <select id="listBoard" resultType="BoardVO">
         select * 
-        from NOTICE 
+        from NOTICE
+        order by postno DESC
     </select>
     
-    <!-- 해당 글 상세 가져오기(postno에 해당하는칼럼 다가져옴) -->
+    
+    <select id="listCriteria" resultType="BoardVO">
+        <![CDATA[
+        select * 
+        from NOTICE
+        WHERE postno > 0
+        
+        order by postno DESC
+        LIMIT #{pageStart},#{perPageNum}
+            ]]>
+        
+    </select>
+    
+    <!-- 해당 글 상세 가져오기(postno에 해당하는칼럼) -->
     <select id="detailBoard" resultType="BoardVO">
-            select * from NOTICE where postno = #{postno}
+            SELECT *
+            FROM NOTICE
+            WHERE postno=#{postno}
     </select>
  
     <!-- 글 삭제하기 -->

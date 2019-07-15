@@ -1,16 +1,25 @@
 package com.deu.webapp.VO;
 
 public class BoardVO {
-	private int postno;
+	// 게시글 번호
+	private Integer postno;
+	// 게시글 이름,작성자,내용,작성시간
 	private String posttitle, postwriter,postmemo,postdate;
-
+	 // 게시글 첨부파일
+    private String[] files;
+    // 게시글 첨부파일 갯수
+    private int attachcnt;
   
-
-	public int getPostno() {
+    public String toString() {
+    	String msg="글번호:"+Integer.toString(postno)+"글제목:"+posttitle+"글작성자:"+postwriter+"글내용:"+postmemo;
+		return msg;
+    	
+    }
+	public Integer getPostno() {
 		return postno;
 	}
 
-	public void setPostno(int postno) {
+	public void setPostno(Integer postno) {
 		this.postno = postno;
 	}
 
@@ -46,5 +55,21 @@ public class BoardVO {
 		this.postdate = postdate;
 	}
 
+	public String[] getFiles() {
+		return files;
+	}
+
+	public void setFiles(String[] files) {
+		this.files = files;
+	}
+
+	public int getAttachcnt() {
+		return attachcnt;
+	}
+
+	public void setAttachcnt(int attachcnt) {
+		this.attachcnt = attachcnt;
+	}
+	
     
 }
