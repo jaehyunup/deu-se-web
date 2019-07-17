@@ -1,17 +1,12 @@
 package com.deu.webapp.VO;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-
-import org.springframework.web.util.UriComponents;
-import org.springframework.web.util.UriComponentsBuilder;
 
 public class pageMaker {
 
-    private int totalCount;
-    private int startPage;
-    private int endPage;
-    private boolean prev;
-    private boolean next;
+    public int totalCount;
+    public int startPage;
+    public int endPage;
+    public boolean prev;
+    public boolean next;
 
     private int displayPageNum = 10;
 
@@ -43,4 +38,55 @@ public class pageMaker {
         next = endPage * criteria.getPerPageNum() >= totalCount ? false : true;
 
     }
+
+	public boolean isPrev() {
+		return prev;
+	}
+
+	public void setPrev(boolean prev) {
+		this.prev = prev;
+	}
+
+	public boolean isNext() {
+		return next;
+	}
+
+	public void setNext(boolean next) {
+		this.next = next;
+	}
+
+	public int getStartPage() {
+		return startPage;
+	}
+
+	public void setStartPage(int startPage) {
+		this.startPage = startPage;
+	}
+
+	public int getEndPage() {
+		return endPage;
+	}
+
+	public void setEndPage(int endPage) {
+		this.endPage = endPage;
+	}
+
+	public int getDisplayPageNum() {
+		return displayPageNum;
+	}
+
+	public void setDisplayPageNum(int displayPageNum) {
+		this.displayPageNum = displayPageNum;
+	}
+
+	public int getTotalCount() {
+		return totalCount;
+	}
+
+	public Criteria getCriteria() {
+		return criteria;
+	}
+    
+	
+    
 }

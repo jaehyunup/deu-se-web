@@ -73,7 +73,7 @@
 						class="dropdown-item submenutext"
 						href="https://grd.deu.ac.kr/grd/content/9">대학원</a>
 				</div></li>
-			<li class="nav-item active"><a class="nav-link menutext"
+			<li class="nav-item"><a class="nav-link menutext"
 				href="../abeek"> 공학인증제도 </a></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
@@ -89,7 +89,7 @@
 						class="dropdown-item submenutext" href="#">임영호 교수님</a> <a
 						class="dropdown-item submenutext" href="#">장희숙 교수님</a>
 				</div> </a></li>
-			<li class="nav-item dropdown"><a
+			<li class="nav-item dropdown active"><a
 				class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
 				aria-haspopup="true" aria-expanded="false" href="list"> 게시판
 			</a>
@@ -174,7 +174,10 @@
 								</tbody>
 								
 							</table>
+							<a class="btn btn-danger" href="delete?postno=${contents.postno}">삭제</a>
+							<a class="btn btn-warning" href="modify?postno=${contents.postno}">수정</a>
 							<a class="btn btn-info" href="list">목록으로</a>
+							
 						
 						</div>
 						<!-- 메인컨텐츠 끝 -->

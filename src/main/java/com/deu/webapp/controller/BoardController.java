@@ -43,19 +43,13 @@ public class BoardController {
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String listCriteria(Model model, Criteria criteria ,
 			@RequestParam(value="page", defaultValue="1")int page) throws Exception {
-		 	Criteria creat = new Criteria();
-		    creat.setPage(page); // 페이지번호
-		    creat.setPerPageNum(12); //출력개수
-		    List<BoardVO> boardpage = service.listCriteria(creat);   
+		   
+			List<BoardVO> boardpage = service.listCriteria(criteria);   
 		    pageMaker pm = new pageMaker();
 		    pm.setCriteria(criteria); // 페이징 객체 리턴 
-		    pm.setTotalCount(1000); // 게시글 총 개수
-
+		    pm.setTotalCount(service.countBoard(criteria)); // 게시글 총 개수
 			model.addAttribute("list", boardpage); // model에 데이터 값을 담는다 
-			
-		    model.addAttribute("articles", service.listCriteria(criteria));
-		    model.addAttribute("pageMaker", pm);
-			
+		    model.addAttribute("pm", pm);
 			
 			
 		 return "notice";
@@ -79,8 +73,6 @@ public class BoardController {
 	@RequestMapping(value = "/read", method = RequestMethod.GET)
 	public String readPost(@RequestParam("postno") Integer postno, Model model) throws Exception {
 		model.addAttribute("contents",service.read(postno));
-		logger.info(model.toString());
-
 		return "read";
 	}
 
@@ -100,7 +92,7 @@ public class BoardController {
 	}
 
 	// 삭제
-	@RequestMapping(value = "/delete", method = RequestMethod.POST)
+	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public String deletePOST(@RequestParam("postno") int postno, RedirectAttributes redirectAttributes)
 			throws Exception {
 		service.delete(postno);

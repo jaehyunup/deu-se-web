@@ -49,9 +49,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <!-- 글 수정하기 -->
     <update id="updateBoard">
         update NOTICE 
-        set posttitle=#{posttitle} ,b_detail = #{postmemo} 
+        set posttitle=#{posttitle} ,postwriter=#{postwriter}, postmemo = #{postmemo}
         where postno = #{postno}
     </update>
-
+	
+	<select id="countBoard" resultType="int">
+    <![CDATA[
+    SELECT COUNT(postno)
+    FROM NOTICE
+    WHERE postno > 0
+    ]]>
+	</select>
 
 </mapper>

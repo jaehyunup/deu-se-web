@@ -18,8 +18,10 @@ public interface BoardService {
     
     public void update(BoardVO vo) throws Exception;
    
-    List<BoardVO> listCriteria(Criteria criteria) throws Exception;
- 
+    public List<BoardVO> listCriteria(Criteria criteria) throws Exception;
+    
+    public int countBoard(Criteria criteria) throws Exception;
+
 }
 
 
