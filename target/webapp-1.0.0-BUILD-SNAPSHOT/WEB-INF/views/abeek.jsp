@@ -91,10 +91,10 @@
 				</div> </a></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
-				aria-haspopup="true" aria-expanded="false" href="overview"> 게시판
+				aria-haspopup="true" aria-expanded="false" href="notice"> 게시판
 			</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					<a class="dropdown-item submenutext" href="#">공지사항</a> <a
+					<a class="dropdown-item submenutext" href="notice">공지사항</a> <a
 						class="dropdown-item submenutext" href="#">공모전/취업정보</a>
 				</div></li>
 		</ul>

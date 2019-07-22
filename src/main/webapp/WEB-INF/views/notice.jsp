@@ -4,9 +4,14 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <!-- import jQuery -->
 <script src="<c:url value="/resources/js/jQuery/jquery-3.4.1.min.js" />"></script>
 <!-- import custom CSS -->
@@ -35,25 +40,13 @@
 
 
 <body>
-
-	<!--최상단 네비바 -->
-	<nav class="navbar float-top navbar-expand-lg"
-		style="padding:0.5% 2% 0.5% 2%;">
-	<button class="navbar-toggler" type="button" data-toggle="collapse"
-		data-target="#navbarText" aria-controls="navbarText"
-		aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<a class="navbar-brand flex-lg-row" href="/webapp/					
-		class="d-inline-block">
-		<img src="<c:url value="/resources/images/logo.png" />"
-		style="width: 35%; height: auto;" alt="" /> <span class="navbar-text"
-		style="color: rgba(44, 44, 44, 0.9); border-left: 1px solid #999; margin-left: 2%; padding-left: 4%; font-size: 1.1rem; font-family: 'Noto Sans KR'; font-weight: 400 !important;">
-			컴퓨터소프트웨어공학과</span>
-	</a> </nav>
-
-	<!--메뉴 네비바 -->
+<!--메뉴네비바 -->
 	<nav id="menunav" class="navbar float-top navbar-expand-lg">
+		<a class="navbar-brand" href="/webapp/home" class="d-inline-block"> <img src="<c:url value="/resources/images/logo.png" />"/></a>  
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 	<div class="collapse navbar-collapse" id="navbarText">
 		<ul class="navbar-nav mx-auto">
 			<li class="nav-item"><a class="nav-link" href="/webapp/home">
@@ -162,46 +155,61 @@
 							<table class="table table-white table-hover">
 								<thead class="thead-dark">
 									<tr>
-										<th style="width: 5%" scope="col">글번호</th>
-										<th style="width: 50%" scope="col">제목</th>
-										<th style="width: 10%" scope="col">글쓴이</th>
-										<th style="width: 20%" scope="col">작성일자</th>
+										<th style="width: 5%" scope="col">NO</th>
+										<th style="width: 75%" scope="col">제목</th>
+										<th style="width: 5%" scope="col">글쓴이</th>
+										<th style="width: 15%" scope="col">작성일자</th>
 									</tr>
 								</thead>
 								<!-- forEach 문은 리스트 객체 타입을 꺼낼때 많이 활용된다. -->
 								<c:forEach var="row" items="${list}">
 									<tr>
 										<!-- 컨트롤러에서 넘겨준 list 모델 객체를 쓰는 방법을 잘 익혀두자 -->
-										<td style="width: 10%">${row.postno}</td>
-										<td style="width: 50%"><a
+										<td style="width: 5%">${row.postno}</td>
+										<td style="width: 75%"><a
 											href="read?postno=${row.postno}"> ${row.posttitle} </a></td>
-										<td style="width: 10%">${row.postwriter}</td>
-										<td style="width: 20%">${row.postdate}</td>
+										<td style="width: 5%">${row.postwriter}</td>
+										<td style="width: 15%">
+											<fmt:parseDate var="formatedDate" value="${row.postdate}" pattern="yyyy-MM-dd HH:mm:ss.S" />
+											<fmt:formatDate value="${formatedDate}" pattern="yyyy-MM-dd" />
+											
+										</td>
 									</tr>
 								</c:forEach>
 							</table>
-							<div class="box-footer">
+							<div class="col-xl-6 col-sm-6">
 								<div class="text-center">
-								<ul class="pagination">
-								<c:if test="${pm.prev}">
-									<li><a href="list?page=${pm.startPage - 1}">이전</a></li>
-								</c:if>
-								<c:forEach begin="${pm.startPage}" end="${pm.endPage}" var="idx">
-									<li
-										<c:out value="${pm.criteria.page == idx ? 'class=active' : ''}"/>>
-										<a href="list?page=${idx}">${idx}</a>
-									</li>
-								</c:forEach>
-								<c:if test="${pm.next && pm.endPage > 0}">
-									<li><a href="list?page=${pm.endPage + 1}">다음</a></li>
-								</c:if>
-								</ul>
+									<ul class="pagination">
+										<c:if test="${pm.prev}">
+											<li><a href="list?page=${pm.startPage - 1}">이전</a></li>
+										</c:if>
+										<c:forEach begin="${pm.startPage}" end="${pm.endPage}"
+											var="idx">
+											<li
+												<c:out value="${pm.criteria.page == idx ? 'class=active' : ''}"/>>
+												<a href="list?page=${idx}">${idx}</a>
+											</li>
+										</c:forEach>
+										<c:if test="${pm.next && pm.endPage > 0}">
+											<li><a href="list?page=${pm.endPage + 1}">다음</a></li>
+										</c:if>
+									</ul>
+								</div>
 							</div>
+							<div class="col-xl-6 col-sm-6">
+								<a href="writeNotice" class="btn btn-dark btn-lg active"
+									role="button" aria-pressed="true">글 작성</a>
+
+								<c:if test="${empty login}">
+									<a href="../user" class="btn btn-dark btn-lg active"
+										role="button" aria-pressed="true">관리자로그인</a>
+								</c:if>
+								<c:if test="${not empty login}">
+									<a href="../user/logout" class="btn btn-dark btn-lg active"
+										role="button" aria-pressed="true">로그아웃</a>
+								</c:if>
 							</div>
-						</div>
-						<div class="col-xl-12">
-							<a href="writeNotice" class="btn btn-dark btn-lg active"
-								role="button" aria-pressed="true">게시글 작성</a>
+
 						</div>
 
 						<!-- 메인컨텐츠 끝 -->
@@ -220,8 +228,7 @@
 
 
 	<!-- 푸터 -->
-	<div
-		class="position-relative page-footer font-small footerdesign pt-3 mt-5">
+	<footer class="position-relative page-footer font-small footerdesign pt-3 mt-5">
 		<!-- Footer Links -->
 		<div class="container text-center text-md-left">
 			<!-- Grid row -->
@@ -251,7 +258,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</footer>
 
 </body>
 

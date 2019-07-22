@@ -23,6 +23,11 @@ li.topbar {
 	float:right;
 }
 
+.navbar-brand > img{
+   margin-left:0 auto;
+}
+
+
 /*보드*/
 .boardstyle {
 	padding: 3%;
@@ -72,6 +77,10 @@ li.topbar {
 	bottom: 15% !important;
 }
 
+.page-footer{
+	position:fixed;
+	bottom:0;
+}
 .footerdesign {
 	background-color: #2b3956 !important;
 	color: #FFF !important;

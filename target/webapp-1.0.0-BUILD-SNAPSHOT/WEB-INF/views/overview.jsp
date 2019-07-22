@@ -4,6 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -86,10 +87,10 @@
 				</div> </a></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
-				aria-haspopup="true" aria-expanded="false" href="overview"> 게시판
+				aria-haspopup="true" aria-expanded="false" href="notice"> 게시판
 			</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					<a class="dropdown-item submenutext" href="#">공지사항</a> <a
+					<a class="dropdown-item submenutext" href="notice">공지사항</a> <a
 						class="dropdown-item submenutext" href="#">공모전/취업정보</a>
 				</div></li>
 		</ul>

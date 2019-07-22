@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.deu.webapp.mappers.boardMapper"> 
+
+	 <!--		
+	  MyBatis 
+	 게시판관련 CRUD의 실질적 시퀄문이 여기에 저장됨 -->
+	  
+	 <!-- 글삽입 -->
+    <insert id="insertBoard">
+        insert into NOTICE (posttitle,postwriter,postmemo) 
+        values(#{posttitle},#{postwriter},#{postmemo})
+    </insert>
+
+	<!-- 글 전체 조회 -->
+    <select id="listBoard" resultType="BoardVO">
+        select * 
+        from NOTICE
+        order by postno DESC
+    </select>
+    
+    
+    <select id="listCriteria" resultType="BoardVO">
+        <![CDATA[
+        select * 
+        from NOTICE
+        WHERE postno > 0
+        
+        order by postno DESC
+        LIMIT #{pageStart},#{perPageNum}
+            ]]>
+        
+    </select>
+    
+    <!-- 해당 글 상세 가져오기(postno에 해당하는칼럼) -->
+    <select id="detailBoard" resultType="BoardVO">
+            SELECT *
+            FROM NOTICE
+            WHERE postno=#{postno}
+    </select>
+ 
+    <!-- 글 삭제하기 -->
+    <delete id="deleteBoard">
+        delete from NOTICE where postno = #{postno}
+    </delete>
+    
+    <!-- 글 수정하기 -->
+    <update id="updateBoard">
+        update NOTICE 
+        set posttitle=#{posttitle} ,postwriter=#{postwriter}, postmemo = #{postmemo}
+        where postno = #{postno}
+    </update>
+	
+	<select id="countBoard" resultType="int">
+    <![CDATA[
+    SELECT COUNT(postno)
+    FROM NOTICE
+    WHERE postno > 0
+    ]]>
+	</select>
+
+</mapper>

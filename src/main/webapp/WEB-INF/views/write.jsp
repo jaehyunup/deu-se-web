@@ -8,6 +8,8 @@
 <html>
 <% request.setCharacterEncoding("UTF-8"); %>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <!-- import jQuery -->
 <script src="<c:url value="/resources/js/jQuery/jquery-3.4.1.min.js" />"></script>
 <!-- import custom CSS -->
@@ -32,24 +34,13 @@
 
 
 <body>
-
-	<!--최상단 네비바 -->
-	<nav class="navbar float-top navbar-expand-lg"
-		style="padding:0.5% 2% 0.5% 2%;">
-	<button class="navbar-toggler" type="button" data-toggle="collapse"
-		data-target="#navbarText" aria-controls="navbarText"
-		aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<a class="navbar-brand flex-lg-row" href="/webapp/home"
-		class="d-inline-block"> <img src="resources/images/logo.png"
-		style="width: 35%; height: auto;" alt="" /> <span class="navbar-text"
-		style="color: rgba(44, 44, 44, 0.9); border-left: 1px solid #999; margin-left: 2%; padding-left: 4%; font-size: 1.1rem; font-family: 'Noto Sans KR'; font-weight: 400 !important;">
-			컴퓨터소프트웨어공학과</span>
-	</a> </nav>
-
-	<!--메뉴 네비바 -->
+<!--메뉴네비바 -->
 	<nav id="menunav" class="navbar float-top navbar-expand-lg">
+		<a class="navbar-brand" href="/webapp/home" class="d-inline-block"> <img src="<c:url value="/resources/images/logo.png" />"/></a>  
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 	<div class="collapse navbar-collapse" id="navbarText">
 		<ul class="navbar-nav mx-auto">
 			<li class="nav-item"><a class="nav-link" href="/webapp/home">

@@ -25,6 +25,8 @@
 	<context:component-scan base-package="com.deu.webapp.controller" />
 	<context:component-scan base-package="com.deu.webapp.VO" />
 	<context:component-scan base-package="com.deu.webapp.DAO" />
+	<context:component-scan base-package="com.deu.webapp.service" />
+	
 	
 	
 	

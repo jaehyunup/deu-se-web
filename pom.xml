@@ -118,7 +118,7 @@
 			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -145,6 +145,13 @@
 			<artifactId>mariadb-java-client</artifactId>
 			<version>2.3.0</version>
 		</dependency>
+		<!--비밀번호 암호화 -->
+		<!-- https://mvnrepository.com/artifact/org.mindrot/jbcrypt -->
+		<dependency>
+			<groupId>org.mindrot</groupId>
+			<artifactId>jbcrypt</artifactId>
+			<version>0.4</version>
+		</dependency>
 		
 		<!-- spring-test -->
 		<dependency>
@@ -152,7 +159,7 @@
 			<artifactId>spring-test</artifactId>
 			<version>4.3.13.RELEASE</version>
 		</dependency>
-		
+
 	</dependencies>
 	<build>
 		<plugins>

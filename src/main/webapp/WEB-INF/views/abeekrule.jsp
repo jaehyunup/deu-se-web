@@ -7,6 +7,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <!-- import jQuery -->
 <script src="<c:url value="/resources/js/jQuery/jquery-3.4.1.min.js" />"></script>
 <!-- import custom CSS -->
@@ -32,23 +35,15 @@
 
 <body>
 
-	<!--최상단 네비바 -->
-	<nav class="navbar float-top navbar-expand-lg"
-		style="padding:0.5% 2% 0.5% 2%;">
+	<!--메뉴네비바 -->
+	<nav id="menunav" class="navbar float-top navbar-expand-lg"> <a
+		class="navbar-brand" href="/webapp/home" class="d-inline-block"> <img
+		src="<c:url value="/resources/images/logo.png" />" /></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarText" aria-controls="navbarText"
 		aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
-	<a class="navbar-brand flex-lg-row" href="/webapp/home"
-		class="d-inline-block"> <img src="resources/images/logo.png"
-		style="width: 35%; height: auto;" alt="" /> <span class="navbar-text"
-		style="color: rgba(44, 44, 44, 0.9); border-left: 1px solid #999; margin-left: 2%; padding-left: 4%; font-size: 1.1rem; font-family: 'Noto Sans KR'; font-weight: 400 !important;">
-			컴퓨터소프트웨어공학과</span>
-	</a> </nav>
-
-	<!--메뉴네비바 -->
-	<nav id="menunav" class="navbar float-top navbar-expand-lg">
 	<div class="collapse navbar-collapse" id="navbarText">
 		<ul class="navbar-nav mx-auto">
 			<li class="nav-item"><a class="nav-link" href="/webapp/home">
@@ -91,8 +86,7 @@
 				</div> </a></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
-				aria-haspopup="true" aria-expanded="false" href="notice"> 게시판
-			</a>
+				aria-haspopup="true" aria-expanded="false" href="notice"> 게시판 </a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 					<a class="dropdown-item submenutext" href="notice">공지사항</a> <a
 						class="dropdown-item submenutext" href="#">공모전/취업정보</a>
@@ -211,29 +205,29 @@
 									<div class="container-fluid mb-5">
 										<div class="row">
 											<div class="col-xs-12">
-												<table border="0" cellspacing="0"
-													cellpadding="0">
+												<table border="0" cellspacing="0" cellpadding="0">
 													<tbody>
 														<tr>
 															<td>
-															<div class="text10">위원회 및 행정지원 조직</div>
-															<img class="auto-size-img" style="max-height:90%;margin:0 auto;"
+																<div class="text10">위원회 및 행정지원 조직</div> <img
+																class="auto-size-img"
+																style="max-height: 90%; margin: 0 auto;"
 																src="<c:url value="/resources/images/abeek/abeekcom.gif"/>">
 															</td>
 														</tr>
 														<tr>
-														
+
 															<td align="center">
-															
-																<table width="100%" border="0"
-																	cellpadding="0" cellspacing="1" >
+
+																<table width="100%" border="0" cellpadding="0"
+																	cellspacing="1">
 																	<tbody>
 																		<tr>
-																			<th class="text07" >
+																			<th class="text07">
 																				<div class="text10">위원회별 주요업무</div>
 
 																			</th>
-																			
+
 																		</tr>
 
 
@@ -261,9 +255,10 @@
 																		</tr>
 
 																	</tbody>
-																</table></td>
+																</table>
+															</td>
 														</tr>
-														
+
 														<tr>
 															<td><table width="666" border="0" cellspacing="0"
 																	cellpadding="0">

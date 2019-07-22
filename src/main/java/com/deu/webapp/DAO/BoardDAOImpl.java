@@ -11,11 +11,13 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 @Repository
 public class BoardDAOImpl implements BoardDAO {
-	
-	@Inject
-	SqlSession sqlSession;
-    private static String namespace = "com.deu.webapp.mappers.boardMapper";
-
+	private SqlSession sqlSession;
+    private String namespace = "com.deu.webapp.mappers.boardMapper";
+    
+    @Inject
+    public BoardDAOImpl(SqlSession sqlSession) {
+        this.sqlSession = sqlSession;
+    }
 
     @Override
 	public void create(BoardVO vo) throws Exception {

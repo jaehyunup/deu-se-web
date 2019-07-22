@@ -2,25 +2,46 @@ package com.deu.webapp.VO;
 
 public class UserVO {
 
-    private String userId;
-    private String userPw;
-    
-	public String getUserId() {
-		return userId;
+	private String ID;
+	private String PASSWORD;
+	
+
+	public String getID() {
+		return ID;
 	}
-	public void setUserId(String userId) {
-		this.userId = userId;
+
+
+
+	public void setID(String iD) {
+		ID = iD;
 	}
-	public String getUserPw() {
-		return userPw;
+
+
+
+
+
+
+	public String getPASSWORD() {
+		return PASSWORD;
 	}
-	public void setUserPw(String userPw) {
-		this.userPw = userPw;
+
+
+
+
+
+
+	public void setPASSWORD(String pASSWORD) {
+		PASSWORD = pASSWORD;
 	}
-   
+
+
+
+
+
+
 	@Override
 	public String toString() {
-		return "로그인시도, 아이디는"+this.getUserId()+"비밀번호는"+this.getUserPw();
+		return "UserVO, 아이디는"+this.getID()+"비밀번호는"+this.getPASSWORD();
 	}
     // getter, setter, toString 생략 
 }

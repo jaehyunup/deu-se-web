@@ -28,9 +28,9 @@ import com.deu.webapp.service.BoardService;
 @RequestMapping("/notice") // 해당 컨트롤러는 /board/ url 요청시에 맵핑된다. (/board/* , /board/*/* .. )
 @Controller
 public class BoardController {
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	@Inject
-	private BoardService service;
+	private BoardService boardservice;
 
 
 	@RequestMapping(value = "", method = RequestMethod.GET)
@@ -44,10 +44,10 @@ public class BoardController {
 	public String listCriteria(Model model, Criteria criteria ,
 			@RequestParam(value="page", defaultValue="1")int page) throws Exception {
 		   
-			List<BoardVO> boardpage = service.listCriteria(criteria);   
+			List<BoardVO> boardpage = boardservice.listCriteria(criteria);   
 		    pageMaker pm = new pageMaker();
 		    pm.setCriteria(criteria); // 페이징 객체 리턴 
-		    pm.setTotalCount(service.countBoard(criteria)); // 게시글 총 개수
+		    pm.setTotalCount(boardservice.countBoard(criteria)); // 게시글 총 개수
 			model.addAttribute("list", boardpage); // model에 데이터 값을 담는다 
 		    model.addAttribute("pm", pm);
 			
@@ -63,7 +63,7 @@ public class BoardController {
 	// 등록포스트
 	@RequestMapping(value = "/writeNotice", method = RequestMethod.POST)
 	public String writePost(BoardVO boardvo, RedirectAttributes redirectAttributes) throws Exception {
-		service.create(boardvo);
+		boardservice.create(boardvo);
 		redirectAttributes.addFlashAttribute("msg", "regSuccess");
 
 		return "redirect:list"; // board/board_list.jsp로 이동
@@ -72,21 +72,21 @@ public class BoardController {
 	// 상세조회(1개)
 	@RequestMapping(value = "/read", method = RequestMethod.GET)
 	public String readPost(@RequestParam("postno") Integer postno, Model model) throws Exception {
-		model.addAttribute("contents",service.read(postno));
+		model.addAttribute("contents",boardservice.read(postno));
 		return "read";
 	}
 
 	// 수정 페이지 이동
 	@RequestMapping(value = "/modify", method = RequestMethod.GET)
 	public String modifyGET(@RequestParam("postno") int postno, Model model) throws Exception {
-		model.addAttribute("board", service.read(postno));
+		model.addAttribute("board", boardservice.read(postno));
 		return "modify"; // b
 	}
 
 	// 수정 내용 등록
 	@RequestMapping(value = "/modify", method = RequestMethod.POST)
 	public String modifyPOST(BoardVO boardvo, RedirectAttributes redirectAttributes) throws Exception {
-		service.update(boardvo);
+		boardservice.update(boardvo);
 		redirectAttributes.addFlashAttribute("msg", "modSuccess");
 		return "redirect:/notice/list"; // board/board_list.jsp로 이동
 	}
@@ -95,7 +95,7 @@ public class BoardController {
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public String deletePOST(@RequestParam("postno") int postno, RedirectAttributes redirectAttributes)
 			throws Exception {
-		service.delete(postno);
+		boardservice.delete(postno);
 		redirectAttributes.addFlashAttribute("msg", "modSuccess");
 
 		return "redirect:/notice"; // board/board_list.jsp로 이동
