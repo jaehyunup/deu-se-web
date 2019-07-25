@@ -4,6 +4,7 @@ html {
 	font-size: 13px;
 }
 
+
 /*탑바*/
 ul.topbar {
 	list-style: none;
@@ -86,7 +87,7 @@ li.topbar {
 	color: #FFF !important;
 }
 
-/*드롭다운 메뉴바*/
+/* 메뉴바*/
 .navbar-default .navbar-nav>li.dropdown:hover>a, .navbar-default .navbar-nav>li.dropdown:hover>a:hover,
 	.navbar-default .navbar-nav>li.dropdown:hover>a:focus {
 	background-color: rgb(231, 231, 231);
@@ -112,26 +113,30 @@ li.dropdown:hover>.dropdown-menu {
 ul > li.nav-item.active{
 	background-color:#0b3d92;
 	border-radius:3px;
+	font-weight: 500;
 }
 
 ul > li.nav-item.active > a{
 	color:#fff;
+	font-weight: 500;
+	
 }
 
 /*메인 메뉴 패딩*/
 li.nav-item {
 	padding-left: 20px;
 	padding-right: 20px;
-	font-family: 'Noto Sans KR';
 	font-size: 1.2rem;
-	font-weight: 700 !important;
+	font-weight: 500 !important;
+	font-family:'Noto Sans KR';
 	color: #333;
 }
 
 /* 홈제외 메뉴 사이드바 */
 .nav-link {
 	color: #333;
-	font-weight: 500;
+	font-size: 1.2rem;
+	font-weight: 500 !important;
 }
 
 .nav-link:hover {
@@ -142,14 +147,16 @@ li.nav-item {
 
 li > a.active{
 	background-color:#333;
+	font-weight: 500;
 }
 
 
 #maincarousel{
-	
+	z-index:-99;
 }
 
 #menunav{
+	 font-family:Nanum Gothic;
 	 background-color: #fff;
 	 z-index:30;
 }
@@ -374,3 +381,107 @@ tr,td {
 .table{
 	font-size:1.0rem;
 }
+
+
+.banner{
+	border-radius:15px;	
+}
+
+.banner-background1{
+	background: linear-gradient(200deg, #81b125, #9db66d);
+	
+	color:#fff;
+
+}
+
+.banner-background2{
+	background: linear-gradient(200deg, #735b4c, #907462);
+	color:#fff;
+	
+}
+
+.banner-background3{
+	background: linear-gradient(200deg, #2c4c80, #3d619d);
+	color:#fff;
+	
+}
+
+.banner-background4{
+	background: linear-gradient(200deg, #f4f4f4, #ffffff);
+	color:#333;
+	
+}
+.banner-background5{
+background: linear-gradient(200deg, #f5a322, #e3a127);
+	color:#fff;
+	
+}
+.banner-background6{
+background: linear-gradient(200deg, #eb7938, #f0874b);
+	color:#fff;
+	
+}
+
+.maincontents{
+	margin-top:1%;
+	margin-bottom:1%;
+}
+
+.bannermaintext{
+	font-family:'Noto Sans KR';
+	font-weight:600;
+	font-size:1.5rem;
+	border-bottom:2px solid #fff;
+	padding-bottom:1%;
+}
+.banner1subtext1{
+	overflow: hidden; text-overflow: ellipsis;white-space: nowrap;
+	font-weight:400;
+	font-size:1rem;
+}
+
+.banner1subtext2{
+	overflow: hidden; text-overflow: ellipsis;white-space: nowrap;
+	font-weight:300;
+	font-size:0.8rem;
+	text-align:right;
+}
+
+.subbannerheader{
+	font-family:'Noto Sans KR';
+	padding-top:2%;
+	padding-bottom:2%;
+	font-weight:700;
+	font-size:1.8rem;
+	color:#fff;
+}
+
+.subbannerheaderblacktext{
+	font-family:'Nanum Gothic';
+	padding-top:2%;
+	padding-bottom:2%;
+	font-weight:700;
+	font-size:1.8rem;
+	color:#5a5a5a;
+}
+.subbannerbody{
+	font-family:'Nanum Gothic';
+	padding-top:1%;
+	font-size:1.3rem;
+	color:#fff
+}
+
+.subbannerbodyblacktext{
+	font-family:'Nanum Gothic';
+	padding-top:1%;
+	font-size:1.3rem;
+	color:#5a5a5a;
+}
+
+
+/* 교수진 css */
+.professorimage{
+	max-height:478px;
+	max-weight:360px;
+}
+

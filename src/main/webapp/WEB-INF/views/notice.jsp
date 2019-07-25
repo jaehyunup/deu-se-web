@@ -152,12 +152,12 @@
 						</div>
 						<!--메인컨텐츠 시작-->
 						<div class="col-xl-12">
-							<table class="table table-white table-hover">
+							<table class="table table-white table-hover" style="table-layout:fixed;">
 								<thead class="thead-dark">
 									<tr>
 										<th style="width: 5%" scope="col">NO</th>
-										<th style="width: 75%" scope="col">제목</th>
-										<th style="width: 5%" scope="col">글쓴이</th>
+										<th style="width: 65%" scope="col">제목</th>
+										<th style="width: 15%" scope="col">작성자</th>
 										<th style="width: 15%" scope="col">작성일자</th>
 									</tr>
 								</thead>
@@ -166,9 +166,9 @@
 									<tr>
 										<!-- 컨트롤러에서 넘겨준 list 모델 객체를 쓰는 방법을 잘 익혀두자 -->
 										<td style="width: 5%">${row.postno}</td>
-										<td style="width: 75%"><a
+										<td style="width: 65%;overflow: hidden; text-overflow: ellipsis;	white-space: nowrap;"><a
 											href="read?postno=${row.postno}"> ${row.posttitle} </a></td>
-										<td style="width: 5%">${row.postwriter}</td>
+										<td style="width: 15%">${row.postwriter}</td>
 										<td style="width: 15%">
 											<fmt:parseDate var="formatedDate" value="${row.postdate}" pattern="yyyy-MM-dd HH:mm:ss.S" />
 											<fmt:formatDate value="${formatedDate}" pattern="yyyy-MM-dd" />

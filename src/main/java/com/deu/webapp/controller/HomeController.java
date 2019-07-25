@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import javax.inject.Inject;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -22,17 +24,23 @@ import com.deu.webapp.service.BoardService;
 @Controller
 public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
+	@Inject
+	private BoardService boardservice;
+
 	/* home .*/
 	@RequestMapping(value = "", method = RequestMethod.GET)
-	public String homeinit(Locale locale, Model model) {
+	public String homeinit(Locale locale, Model model) throws Exception {
+		List<BoardVO> CurrentContestList=boardservice.getcurrentContents();
+		model.addAttribute("currentContentsList", CurrentContestList);
 		return "home";
 		//return.
 	}
 	
 	/* home .*/
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
+	public String home(Locale locale, Model model) throws Exception {
+		List<BoardVO> CurrentContestList=boardservice.getcurrentContents();
+		model.addAttribute("currentContentsList", CurrentContestList);
 		return "home";
 		//return.
 	}
@@ -60,7 +68,7 @@ public class HomeController {
 		//return
 	}
 	
-	/* 입학안내*/
+	/* 공학인증 */
 	@RequestMapping(value = "/abeek", method = RequestMethod.GET)
 	public String abeek(Locale locale, Model model) {
 			
@@ -68,7 +76,7 @@ public class HomeController {
 		//return
 	}
 	
-	/* 입학안내*/
+	/* 공학인증 프로그램*/
 	@RequestMapping(value = "/abeekrule", method = RequestMethod.GET)
 	public String abeekrule(Locale locale, Model model) {
 			
@@ -76,6 +84,14 @@ public class HomeController {
 		//return
 	}
 	
+	
+	/* 입학안내*/
+	@RequestMapping(value = "/professor", method = RequestMethod.GET)
+	public String professor(Locale locale, Model model) {
+			
+		return "professor";
+		//return
+	}
 	
 	 
 	

@@ -21,6 +21,8 @@ public interface BoardService {
     public List<BoardVO> listCriteria(Criteria criteria) throws Exception;
     
     public int countBoard(Criteria criteria) throws Exception;
+    
+    public List<BoardVO> getcurrentContents() throws Exception;
 
 }
 

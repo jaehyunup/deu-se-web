@@ -21,6 +21,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         order by postno DESC
     </select>
     
+    <select id="listCurrentContents" resultType="BoardVO">
+    	select * 
+        from NOTICE
+        order by postno DESC
+        LIMIT 0,5
+    </select>
     
     <select id="listCriteria" resultType="BoardVO">
         <![CDATA[

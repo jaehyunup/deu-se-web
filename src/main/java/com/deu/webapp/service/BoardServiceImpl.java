@@ -51,6 +51,12 @@ public class BoardServiceImpl implements BoardService {
 	public int countBoard(Criteria criteria) throws Exception {
 	    return dao.countBoard(criteria);
 	}
+
+	@Override
+	public List<BoardVO> getcurrentContents() throws Exception {
+		// TODO Auto-generated method stub
+		return dao.listCurrentContents();
+	}
 	
 
 }

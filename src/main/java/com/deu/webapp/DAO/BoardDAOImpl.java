@@ -55,4 +55,9 @@ public class BoardDAOImpl implements BoardDAO {
 	public int countBoard(Criteria criteria) throws Exception {
 	    return sqlSession.selectOne(namespace + ".countBoard", criteria);
 	}
+
+	@Override
+	public List<BoardVO> listCurrentContents() throws Exception {
+		return sqlSession.selectList(namespace+".listCurrentContents");
+	}
 }

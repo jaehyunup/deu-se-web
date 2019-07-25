@@ -21,6 +21,8 @@ public interface BoardDAO {
 	    public List<BoardVO> listCriteria(Criteria criteria) throws Exception;
 	    	
 	    public int countBoard(Criteria criteria) throws Exception;
+	  
+	    public List<BoardVO> listCurrentContents() throws Exception;
 
 
 }
