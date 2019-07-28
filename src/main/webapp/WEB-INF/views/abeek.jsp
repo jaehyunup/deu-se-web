@@ -32,8 +32,7 @@
 
 
 <body>
-
-	
+	<div class="container py-2">
 	<!--메뉴네비바 -->
 	<nav id="menunav" class="navbar float-top navbar-expand-lg">
 		<a class="navbar-brand" href="/webapp/home" class="d-inline-block"> <img src="<c:url value="/resources/images/logo.png" />"/></a>  
@@ -68,20 +67,8 @@
 				</div></li>
 			<li class="nav-item active"><a class="nav-link menutext"
 				href="#home"> 공학인증제도 </a></li>
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
-				aria-haspopup="true" aria-expanded="false" href="overview"> 교수진
-			</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					<a class="dropdown-item submenutext" href="#">김태석 교수님</a> <a
-						class="dropdown-item submenutext" href="#">권오준 교수님</a> <a
-						class="dropdown-item submenutext" href="#">권순각 교수님</a> <a
-						class="dropdown-item submenutext" href="#">김성우 교수님</a> <a
-						class="dropdown-item submenutext" href="#">이종민 교수님</a> <a
-						class="dropdown-item submenutext" href="#">박유현 교수님</a> <a
-						class="dropdown-item submenutext" href="#">임영호 교수님</a> <a
-						class="dropdown-item submenutext" href="#">장희숙 교수님</a>
-				</div> </a></li>
+			<li class="nav-item"><a class="nav-link menutext"
+				href="professor"> 교수진 </a></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
 				aria-haspopup="true" aria-expanded="false" href="notice"> 게시판
@@ -93,7 +80,7 @@
 		</ul>
 	</div>
 	</nav>
-
+	</div>
 	<!--슬라이더 -->
 	<!--Carousel Wrapper-->
 	<div id="maincarousel" class="carousel slide carousel-fade"
@@ -129,10 +116,10 @@
 			<!-- Vertical Menu-->
 			<nav class="nav flex-column bg-white rounded p-3"> <a
 				href="abeek"
-				class="nav-link px-4 bg-info text-white shadow-sm py-3 my-1 rounded-pill sidebarmenu">
+				class="nav-link px-4 bg-info text-white shadow-sm py-3 my-1 sidebarmenu">
 				<i class="fas fa-university"></i>&nbsp; 개요 및 목표
 			</a> <a href="abeekrule"
-				class="nav-link px-4 py-3 shadow-sm my-1 rounded-pill sidebarmenu">
+				class="nav-link px-4 py-3 shadow-sm my-1 sidebarmenu">
 				<i class="fas fa-graduation-cap"></i>&nbsp;인증프로그램
 			</a> </nav>
 			<!-- End -->
@@ -149,8 +136,8 @@
 						</div>
 						<div class="col-xs-12">
 							<ul class="nav nav-pills">
-								<li class="active"><a href="#tab_a" data-toggle="pill">
-										개요 </a></li>
+								<li class="active">
+									<a href="#tab_a" class="active" data-toggle="pill">개요 </a></li>
 								<li><a href="#tab_b" data-toggle="pill"> 교육 목표 </a></li>
 							</ul>
 						</div>
@@ -178,16 +165,14 @@
 									<div class="container-fluid mb-5">
 										<div class="row">
 											<div class="col-md-12">
-												<table>
-													<tbody>
-														<tr>
-															<td>
-																<div class="aimbackground">
-																	<div class="aimcontainer">
-																		<p>
-																			<strong class="courseaim">교육목표 </strong>
-																		</p>
-																		<p>
+											<h5 style="margin-bottom:1%;font-weight:700;font-size:1.2rem;color:#333;
+											padding-bottom:2%;">
+													<i class="fas fa-chevron-circle-right" style="font-size:1.3rem;
+													color:#333;margin-right:1%;">
+													</i>교육 목표
+											</h5>
+											<div class="justify-content-center">
+												<p>
 																			&nbsp; 공학인증 프로그램은<strong>
 																				기초과학, 컴퓨터 소프트웨어 공학 기술, 소프트웨어 도구 활용 능력을 바탕으로 한 공학 기초
 																				능력과 도구 활용 능력을 배양하고 </strong> <strong> 습득한 지식과 창의적인
@@ -196,11 +181,12 @@
 																				필요로 하는 실무 수행 능력과 효과적으로 의사를 전달 할 수 있는 능력을 배양하고 </strong> <strong>
 																				건전한 윤리의식과 책임의식을 바탕으로 국제화 시대를 이끌어 나갈 능력</strong>을 갖춘 능동적이고
 																			창의적인 컴퓨터 소프트웨어 전문 기술 인력 양성을 교육목표로 한다.
-																		</p>
-																		<p>&nbsp;</p>
-																	</div>
-																</div> 
-																 
+												</p>
+											</div>
+												<table>
+													<tbody>
+														<tr>
+															<td>
 																 <strong class="text10">1. 공학 기초 능력과 도구 활용능력 배양</strong>
 																
 																 <span class="text07"><strong>세부교육목표</strong></span>
@@ -282,71 +268,40 @@
 
 
 
-
-
-	<!-- 푸터 -->
-	<div
-		class="position-relative page-footer font-small footerdesign pt-3 mt-5">
-		<!-- Footer Links -->
-		<div class="container text-center text-md-left">
-
-			<!-- Grid row -->
-			<div class="row">
-
-				<!-- Grid column -->
-				<div class="col-md-8">
-
-					<!-- Content -->
-
-					<h4 class="bold" style="margin-bottom: 5%;">컴퓨터 소프트웨어공학과</h4>
-					<p>47340 부산광역시 부산진구 엄광로 176 (가야동) 정보공학관 9층</p>
-					<p>Tel.051-890-1114 Fax.051-890-123</p>
-
-
-				</div>
-				<!-- Grid column -->
-
-				<hr class="clearfix w-100 d-md-none pb-3">
-
-				<!-- Grid column -->
-				<div class="col-md-2">
-
-					<!-- Links -->
-					<h4 class="bold" style="margin-bottom: 10%;">관련 링크</h4>
-
-					<ul class="list-unstyled">
-						<li style="margin-bottom: 1%;"><a href="https://deu.ac.kr">동의대학교
-								홈페이지</a></li>
-						<li style="margin-bottom: 1%;"><a href="#!">입학정보</a></li>
-
-					</ul>
-
-				</div>
-				<!-- Grid column -->
-
-				<!-- Grid column -->
-				<div class="col-md-2">
-
-					<!-- Links -->
-					<h4 class="bold" style="margin-bottom: 10%;">학과 SNS</h4>
-
-					<ul class="list-unstyled">
-						<li style="margin-bottom: 1%;"><a href="#!">Instagram</a></li>
-						<li style="margin-bottom: 1%;"><a href="#!">Facebook</a></li>
-					</ul>
-
-				</div>
-				<!-- Grid column -->
-
+<!-- 푸터 -->
+	<footer class="mt-3 pt-2 section footer-classic context-dark" style="background: #fff;border-top:1px solid #ddd;">
+	<div class="container">
+		<div class="row py-3">
+			<div class="col-md-3 offset-md-3 mb-sm-4">
+				<img class="w-100" src="<c:url value="/resources/images/logo.png"/>"/>
 			</div>
-			<!-- Grid row -->
-
+			<div class="col-md-6">
+					<div class="footertext">47340 부산광역시 부산진구 엄광로 176 (가야동) 정보공학관 9층</div>
+					<div class="footertext">Tel.051-890-1114 Fax.051-890-123<br></div>
+					<div class="copyright">Copyright 2019. DONGEUI UNIVERSITY S.E. MAJOR All Rights Reserved.</div>
+			</div>
+			
 		</div>
-		<!-- Footer Links -->
-		<!-- Copyright -->
-		<!-- Copyright -->
 	</div>
-
+	<div class="row no-gutters social-container banner-background3">
+		<div class="col">
+			<a class="social-inner" href="https://www.deu.ac.kr/www"><span
+				class="icon mdi mdi-facebook"></span><span>동의대학교 홈</span></a>
+		</div>
+		<div class="col">
+			<a class="social-inner" href="https://urp.deu.ac.kr/loginDeuF.aspx"><span
+				class="icon mdi mdi-instagram"></span><span>종합정보시스템</span></a>
+		</div>
+		<div class="col">
+			<a class="social-inner" href="https://dap.deu.ac.kr/sso/login.aspx"><span
+				class="icon mdi mdi-twitter"></span><span>학생경력관리포탈</span></a>
+		</div>
+		<div class="col">
+			<a class="social-inner" href="http://sugang.deu.ac.kr:8080/DEUSugang_Login.aspx"><span
+				class="icon mdi mdi-youtube-play"></span><span>수강신청시스템</span></a>
+		</div>
+	</div>
+	</footer>
 
 </body>
 

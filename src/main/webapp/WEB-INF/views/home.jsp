@@ -17,15 +17,21 @@
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <!-- import fontawesome -->
 <script src="<c:url value="/resources/js/fontawesome/all.min.js" />"></script>
+
 <!-- import googlefonts -->
 <link
 	href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
 	rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&display=swap&subset=korean" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&display=swap&subset=korean"
+	rel="stylesheet">
 <!-- import bootstrap -->
 <script src="<c:url value="/resources/js/bootstrap/bootstrap.min.js" />"></script>
 <link href="<c:url value="/resources/css/bootstrap/bootstrap.css" />"
 	rel="stylesheet">
+<!-- import Custom JS -->
+<script src="<c:url value="/resources/js/homeEvent.js" />"></script>
+
 <title>동의대학교 컴퓨터소프트웨어 공학과</title>
 </head>
 
@@ -68,20 +74,8 @@
 					</div></li>
 				<li class="nav-item"><a class="nav-link menutext" href="abeek">
 						공학인증제도 </a></li>
-				<li class="nav-item dropdown"><a
-					class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
-					aria-haspopup="true" aria-expanded="false" href="overview"> 교수진
-				</a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-						<a class="dropdown-item submenutext" href="#">김태석 교수님</a> <a
-							class="dropdown-item submenutext" href="#">권오준 교수님</a> <a
-							class="dropdown-item submenutext" href="#">권순각 교수님</a> <a
-							class="dropdown-item submenutext" href="#">김성우 교수님</a> <a
-							class="dropdown-item submenutext" href="#">이종민 교수님</a> <a
-							class="dropdown-item submenutext" href="#">박유현 교수님</a> <a
-							class="dropdown-item submenutext" href="#">임영호 교수님</a> <a
-							class="dropdown-item submenutext" href="#">장희숙 교수님</a>
-					</div> </a></li>
+				<li class="nav-item"><a class="nav-link menutext"
+					href="professor"> 교수진 </a></li>
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
 					aria-haspopup="true" aria-expanded="false" href="notice"> 게시판 </a>
@@ -146,18 +140,22 @@
 				<div class="row mx-1 p-3 banner shadow banner-background1">
 					<div class="col-sm-12">
 						<p class="bannermaintext">공지사항</p>
-						<table class="table table-white table-hover" frame="void" style="margin:1px;table-layout:fixed;">
+						<table class="table table-white table-hover" frame="void"
+							style="margin: 1px; table-layout: fixed;">
 							<!-- forEach 문은 리스트 객체 타입을 꺼낼때 많이 활용된다. -->
 							<c:forEach var="row" items="${currentContentsList}">
 								<tr>
 									<!-- 컨트롤러에서 넘겨준 list 모델 객체를 쓰는 방법을 잘 익혀두자 -->
-									<td class="banner1subtext1" style="padding:1px;width:80%;border:hidden;color:#fff;">
-										<a style="color:#fff;" href="notice/read?postno=${row.postno}">
-											${row.posttitle}
-										 </a>
+									<td class="banner1subtext1"
+										style="padding: 1px; width: 80%; border: hidden; color: #fff;">
+										<a style="color: #fff;"
+										href="notice/read?postno=${row.postno}"> ${row.posttitle}
+									</a>
 									</td>
-									<td class="banner1subtext2" style="padding:1px;margin-left:auto;width:20%;color:#fff;border:hidden;"><fmt:parseDate var="formatedDate"
-											value="${row.postdate}" pattern="yyyy-MM-dd HH:mm:ss.S" /> <fmt:formatDate
+									<td class="banner1subtext2"
+										style="padding: 1px; margin-left: auto; width: 20%; color: #fff; border: hidden;"><fmt:parseDate
+											var="formatedDate" value="${row.postdate}"
+											pattern="yyyy-MM-dd HH:mm:ss.S" /> <fmt:formatDate
 											value="${formatedDate}" pattern="yyyy-MM-dd" /></td>
 								</tr>
 							</c:forEach>
@@ -177,26 +175,44 @@
 		</div>
 
 		<div class="row mx-auto justify-content-center">
-			<div class="mx-2 my-3 col-sm-11 col-md-2 col-xl-2 p-3 banner shadow banner-background3" align="center">
-				<i class="mb-2 fas fa-graduation-cap" style="font-size:7rem;color:#fff;"></i>
+			<div id="b1"
+				class="mx-2 my-3 col-sm-11 col-md-2 col-xl-2 p-3 banner shadow banner-background3"
+				align="center">
+				<i class="mb-2 fas fa-graduation-cap"
+					style="font-size: 7rem; color: #fff;"></i>
 				<p class="subbannerheader">입학안내</p>
-				<p class="subbannerbody">동의대학교 <br>입학 안내</p>
-				
+				<p class="subbannerbody">
+					동의대학교 <br>입학 안내
+				</p>
 			</div>
-			<div class="mx-2 my-3 col-sm-11 col-md-2  col-xl-2 p-3 banner shadow banner-background4" align="center">
-				<i class="mb-2 fas fa-users" style="font-size:7rem;color:#81b125;"></i>	
+			<div id="b2"
+				class="mx-2 my-3 col-sm-11 col-md-2  col-xl-2 p-3 banner shadow banner-background4"
+				align="center">
+				<i class="mb-2 fas fa-users"
+					style="font-size: 7rem; color: #81b125;"></i>
 				<p class="subbannerheaderblacktext">교수진</p>
-				<p class="subbannerbodyblacktext">소프트웨어공학 <br>교수진 소개</p>
+				<p class="subbannerbodyblacktext">
+					소프트웨어공학 <br>교수진 소개
+				</p>
 			</div>
-			<div class="mx-2 my-3 col-sm-11 col-md-2  col-xl-2 p-3 banner shadow banner-background5" align="center">
-				<i class="mb-2 fas fa-archway" style="font-size:7rem;color:#fff;"></i>
+			<div id="b3"
+				class="mx-2 my-3 col-sm-11 col-md-2  col-xl-2 p-3 banner shadow banner-background5"
+				align="center">
+				<i class="mb-2 fas fa-archway" style="font-size: 7rem; color: #fff;"></i>
 				<p class="subbannerheader">학과커리큘럼</p>
-				<p class="subbannerbody">소프트웨어공학 <br>교육과정 안내</p>
+				<p class="subbannerbody">
+					소프트웨어공학 <br>교육과정 안내
+				</p>
 			</div>
-			<div class="mx-2 my-3 col-sm-11 col-md-2  col-xl-2 p-3 banner shadow banner-background6" align="center">
-				<i class="mb-2 fas fa-certificate" style="font-size:7rem;color:#fff;"></i>
+			<div id="b4"
+				class="mx-2 my-3 col-sm-11 col-md-2  col-xl-2 p-3 banner shadow banner-background6"
+				align="center">
+				<i class="mb-2 fas fa-certificate"
+					style="font-size: 7rem; color: #fff;"></i>
 				<p class="subbannerheader">ABEEK</p>
-				<p class="subbannerbody">공학인증 프로그램 <br>소개 및 내규</p>
+				<p class="subbannerbody">
+					공학인증 프로그램 <br>소개 및 내규
+				</p>
 			</div>
 		</div>
 	</div>
@@ -206,72 +222,39 @@
 
 
 	<!-- 푸터 -->
-	<div
-		class="position-relative page-footer font-small footerdesign  pt-3 mt-10 ">
-		<!-- Footer Links -->
-		<div class="container text-center text-md-left">
-
-
-			<!-- Grid row -->
-			<div class="row">
-
-				<!-- Grid column -->
-				<div class="col-md-8">
-
-					<!-- Content -->
-					<h4 class="bold">동의대학교 컴퓨터소프트웨어공학과</h4>
-					<p class="footertext">47340 부산광역시 부산진구 엄광로 176 (가야동) 정보공학관 9층</p>
-					<p class="footertext">Tel.051-890-1114 Fax.051-890-123</p>
-
-
-				</div>
-				<!-- Grid column -->
-
-				<hr class="clearfix w-100 d-md-none pb-3">
-
-				<!-- Grid column -->
-				<div class="col-md-2">
-
-					<!-- Links -->
-					<h4 class="bold" style="margin-bottom: 10%;">관련 링크</h4>
-
-					<ul class="list-unstyled">
-						<li style="margin-bottom: 1%;"><a class="footertext"
-							href="https://deu.ac.kr">동의대학교 홈페이지</a></li>
-						<li style="margin-bottom: 1%;"><a class="footertext"
-							href="#!">입학정보</a></li>
-
-					</ul>
-
-				</div>
-				<!-- Grid column -->
-
-				<!-- Grid column -->
-				<div class="col-md-2">
-
-					<!-- Links -->
-					<h4 class="bold" style="margin-bottom: 10%;">학과 SNS</h4>
-
-					<ul class="list-unstyled">
-						<li style="margin-bottom: 1%;"><a class="footertext"
-							href="#!">Instagram</a></li>
-						<li style="margin-bottom: 1%;"><a class="footertext"
-							href="#!">Facebook</a></li>
-					</ul>
-
-				</div>
-				<!-- Grid column -->
-
+	<footer class="mt-3 pt-2 section footer-classic context-dark" style="background: #fff;border-top:1px solid #ddd;">
+	<div class="container">
+		<div class="row py-3">
+			<div class="col-md-3 offset-md-3 mb-sm-4">
+				<img class="w-100" src="<c:url value="/resources/images/logo.png"/>"/>
 			</div>
-			<!-- Grid row -->
-
+			<div class="col-md-6">
+					<div class="footertext">47340 부산광역시 부산진구 엄광로 176 (가야동) 정보공학관 9층</div>
+					<div class="footertext">Tel.051-890-1114 Fax.051-890-123<br></div>
+					<div class="copyright">Copyright 2019. DONGEUI UNIVERSITY S.E. MAJOR All Rights Reserved.</div>
+			</div>
+			
 		</div>
-		<!-- Footer Links -->
-		<!-- Copyright -->
-		<!-- Copyright -->
 	</div>
-
-
+	<div class="row no-gutters social-container banner-background3">
+		<div class="col">
+			<a class="social-inner" href="https://www.deu.ac.kr/www"><span
+				class="icon mdi mdi-facebook"></span><span>동의대학교 홈</span></a>
+		</div>
+		<div class="col">
+			<a class="social-inner" href="https://urp.deu.ac.kr/loginDeuF.aspx"><span
+				class="icon mdi mdi-instagram"></span><span>종합정보시스템</span></a>
+		</div>
+		<div class="col">
+			<a class="social-inner" href="https://dap.deu.ac.kr/sso/login.aspx"><span
+				class="icon mdi mdi-twitter"></span><span>학생경력관리포탈</span></a>
+		</div>
+		<div class="col">
+			<a class="social-inner" href="http://sugang.deu.ac.kr:8080/DEUSugang_Login.aspx"><span
+				class="icon mdi mdi-youtube-play"></span><span>수강신청시스템</span></a>
+		</div>
+	</div>
+	</footer>
 </body>
 
 
