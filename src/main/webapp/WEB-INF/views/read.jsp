@@ -4,6 +4,11 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ page import="java.io.*"%>
+<%@ page import="java.text.*" %>
+<%@ page import="java.lang.*" %>
+<%@ page import="java.util.*" %>
+<%@ page import="java.net.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -128,7 +133,7 @@
 		<!-- 메인콘텐츠 공간 -->
 		<div class="col-lg-8 col-xs-12">
 			<div class="tabs">
-				<div class="container-fulid">
+				<div class="container">
 					<div class="row mx-0">
 						<!--페이지 네비게이터(콘텐츠 탭 윗부분)-->
 						<div class="col-xl-12 navigator">
@@ -154,8 +159,32 @@
 									</tr>
 									<!-- 글 내용 -->
 									<tr>
-										<td class="bg-white" scope="col" colspan="4">${contents.postmemo}</td>
+										<td scope="col" colspan="4" style="min-height:250px;">
+											${contents.postmemo}
+										</td>
 									</tr>
+									<c:if test="${not empty fdlist}">
+										<c:forEach var="fdlist" items="${fdlist}" varStatus="liststatus">
+												<tr>
+												<th class="bg-dark text-white" scope="col" colspan="1">
+													 첨부파일 ${liststatus.count}
+												</th>
+												<td scope="col" colspan="6">
+												 <form action="download.do" id="filefrm" method="post">
+        											<div>
+        												<input type="hidden" name="requestfile" value="${fdlist['filepath']}"/>
+        												<a class="btn btn-dark text-white" 
+        													onClick="document.getElementById('filefrm').submit()">
+        													${fdlist['filename']}
+        												</a>
+       												</div>
+  												 </form>
+												</td>
+												</tr>
+										</c:forEach>
+										
+									</c:if>
+									
 								</tbody>
 
 							</table>

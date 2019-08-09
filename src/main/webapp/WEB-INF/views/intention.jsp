@@ -131,7 +131,7 @@
 		<!--콘텐츠 -->
 		<div class="col-lg-8 col-xs-12">
 			<div class="tabs">
-				<div class="container-fulid">
+				<div class="container">
 					<div class="row mx-0">
 						<!--페이지 네비게이터(콘텐츠 탭 윗부분)-->
 						<div class="col-xl-12 navigator">

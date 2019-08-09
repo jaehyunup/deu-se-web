@@ -154,7 +154,7 @@
 						<div class="col-xl-12 mx-0" style="min-height: 300px">
 							<div class="tab-content">
 								<div class="tab-pane fade show active" id="tab_a">
-									<div class="container-fluid mb-5">
+									<div class="container mb-5">
 										<div class="row">
 											<div class="col-md-12">
 												<iframe

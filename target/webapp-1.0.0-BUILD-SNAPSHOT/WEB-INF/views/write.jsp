@@ -6,8 +6,13 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<% request.setCharacterEncoding("UTF-8"); %>
+<%
+	request.setCharacterEncoding("UTF-8");
+%>
 <head>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <!-- import jQuery -->
 <script src="<c:url value="/resources/js/jQuery/jquery-3.4.1.min.js" />"></script>
 <!-- import custom CSS -->
@@ -26,81 +31,89 @@
 	rel="stylesheet">
 <!--import PDF Viewer (pdfjs) -->
 <script src="<c:url value="/resources/js/pdfjs/build/pdf.js" />"></script>
-
+<!-- import ckeditor -->
+<script type="text/javascript" src="<c:url value="/resources/ckeditor/ckeditor.js"/>"></script>
 <title>동의대학교 컴퓨터소프트웨어 공학과</title>
 </head>
 
+<style>
+
+</style>
+<script>
+		$(document).ready(function() {
+
+			var formObj = $("form[role='form']");
+			console.log(formObj);
+
+			$(".modBtn").on("click", function() {
+				formObj.attr("action", "/notice/modify");
+				formObj.attr("method", "get");
+				formObj.submit();
+			});
+
+			$(".delBtn").on("click", function() {
+				formObj.attr("action", "/notice/remove");
+				formObj.submit();
+			});
+
+			$(".listBtn").on("click", function() {
+				self.location = "/notice/list"
+			});
+
+		});
+	</script>
 
 <body>
+	<!--메뉴네비바 -->
+	<div class="container py-2">
+		<nav id="menunav" class="navbar float-top navbar-expand-lg"> <a
+			class="navbar-brand" href="/webapp/home" class="d-inline-block">
+			<img src="<c:url value="/resources/images/logo.png" />" />
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarText" aria-controls="navbarText"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarText">
+			<ul class="navbar-nav mx-auto">
+				<li class="nav-item"><a class="nav-link" href="/webapp/home">
+						홈</a></li>
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false" href="overview"> 학과
+						안내 </a>
+					<div class="dropdown-menu" aria-labelledby="dropdown1">
+						<a class="dropdown-item submenutext" href="overview">학과 소개</a> <a
+							class="dropdown-item submenutext" href="intention">교과 개요</a> <a
+							class="dropdown-item submenutext" href="roadmap">학과 커리큘럼</a>
+					</div></li>
 
-	<!--최상단 네비바 -->
-	<nav class="navbar float-top navbar-expand-lg"
-		style="padding:0.5% 2% 0.5% 2%;">
-	<button class="navbar-toggler" type="button" data-toggle="collapse"
-		data-target="#navbarText" aria-controls="navbarText"
-		aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<a class="navbar-brand flex-lg-row" href="/webapp/home"
-		class="d-inline-block"> <img src="resources/images/logo.png"
-		style="width: 35%; height: auto;" alt="" /> <span class="navbar-text"
-		style="color: rgba(44, 44, 44, 0.9); border-left: 1px solid #999; margin-left: 2%; padding-left: 4%; font-size: 1.1rem; font-family: 'Noto Sans KR'; font-weight: 400 !important;">
-			컴퓨터소프트웨어공학과</span>
-	</a> </nav>
-
-	<!--메뉴 네비바 -->
-	<nav id="menunav" class="navbar float-top navbar-expand-lg">
-	<div class="collapse navbar-collapse" id="navbarText">
-		<ul class="navbar-nav mx-auto">
-			<li class="nav-item"><a class="nav-link" href="/webapp/home">
-					홈</a></li>
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
-				aria-haspopup="true" aria-expanded="false" href="overview"> 학과
-					안내 </a>
-				<div class="dropdown-menu" aria-labelledby="dropdown1">
-					<a class="dropdown-item submenutext" href="overview">학과 소개</a> <a
-						class="dropdown-item submenutext" href="intention">교과 개요</a> <a
-						class="dropdown-item submenutext" href="roadmap">학과 커리큘럼</a>
-				</div></li>
-
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
-				aria-haspopup="true" aria-expanded="false" href="overview"> 입학안내
-			</a>
-				<div class="dropdown-menu" aria-labelledby="dropdown2">
-					<a class="dropdown-item submenutext"
-						href="http://ipsi.deu.ac.kr/main/default.asp">학부</a> <a
-						class="dropdown-item submenutext"
-						href="https://grd.deu.ac.kr/grd/content/9">대학원</a>
-				</div></li>
-			<li class="nav-item active"><a class="nav-link menutext"
-				href="#home"> 공학인증제도 </a></li>
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
-				aria-haspopup="true" aria-expanded="false" href="overview"> 교수진
-			</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					<a class="dropdown-item submenutext" href="#">김태석 교수님</a> <a
-						class="dropdown-item submenutext" href="#">권오준 교수님</a> <a
-						class="dropdown-item submenutext" href="#">권순각 교수님</a> <a
-						class="dropdown-item submenutext" href="#">김성우 교수님</a> <a
-						class="dropdown-item submenutext" href="#">이종민 교수님</a> <a
-						class="dropdown-item submenutext" href="#">박유현 교수님</a> <a
-						class="dropdown-item submenutext" href="#">임영호 교수님</a> <a
-						class="dropdown-item submenutext" href="#">장희숙 교수님</a>
-				</div> </a></li>
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
-				aria-haspopup="true" aria-expanded="false" href="list"> 게시판
-			</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					<a class="dropdown-item submenutext" href="list">공지사항</a> <a
-						class="dropdown-item submenutext" href="#">공모전/취업정보</a>
-				</div></li>
-		</ul>
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false" href="overview">
+						입학안내 </a>
+					<div class="dropdown-menu" aria-labelledby="dropdown2">
+						<a class="dropdown-item submenutext"
+							href="http://ipsi.deu.ac.kr/main/default.asp">학부</a> <a
+							class="dropdown-item submenutext"
+							href="https://grd.deu.ac.kr/grd/content/9">대학원</a>
+					</div></li>
+				<li class="nav-item active"><a class="nav-link menutext"
+					href="#home"> 공학인증제도 </a></li>
+				<li class="nav-item"><a class="nav-link menutext"
+					href="professor"> 교수진 </a></li>
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false" href="list"> 게시판 </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item submenutext" href="list">공지사항</a> <a
+							class="dropdown-item submenutext" href="#">공모전/취업정보</a>
+					</div></li>
+			</ul>
+		</div>
+		</nav>
 	</div>
-	</nav>
 	<!-- 메뉴네비바끝 -->
 
 
@@ -132,11 +145,11 @@
 			style="padding-left: 1%; padding-right: 1%;">
 			<div class="sidebartitle">게시판</div>
 			<nav class="nav flex-column bg-white rounded p-3"> <a
-				href="abeek"
-				class="nav-link px-4 bg-info text-white shadow-sm py-3 my-1 rounded-pill sidebarmenu">
+				href="list"
+				class="nav-link px-4 bg-info text-white shadow-sm py-3 my-1  sidebarmenu">
 				<i class="fas fa-university"></i>&nbsp; 공지사항
 			</a> <a href="abeekrule"
-				class="nav-link px-4 py-3 shadow-sm my-1 rounded-pill sidebarmenu">
+				class="nav-link px-4 py-3 shadow-sm my-1  sidebarmenu">
 				<i class="fas fa-graduation-cap"></i>&nbsp;공모전/취업정보
 			</a> </nav>
 			<!-- 사이드바 종료-->
@@ -156,7 +169,7 @@
 						<!--메인컨텐츠 시작-->
 						<div class="col-xl-12">
 							<div class="col-lg-12">
-								<form role="form" id="writeForm" method="post" action="writeNotice">
+								<form role="form" id="writeForm" method="post" enctype="multipart/form-data" action="writeNotice">
 									<div class="box box-primary">
 										<div class="box-header with-border">
 											<h3 class="box-title">게시글 작성</h3>
@@ -166,18 +179,48 @@
 												<label for="title">제목</label> <input class="form-control"
 													id="title" name="posttitle" placeholder="제목을 입력해주세요">
 											</div>
+											
 											<div class="form-group">
 												<label for="writer">작성자</label> <input class="form-control"
 													id="writer" name="postwriter" value="ADMIN">
 											</div>
 											<div class="form-group">
 												<label for="content">내용</label>
-												<textarea class="form-control" id="content" name="postmemo"
-													rows="30" placeholder="내용을 입력해주세요" style="resize: none;"></textarea>
+												<textarea class="form-control" name="p_content" id="p_content" name="postmemo"
+													rows="30" placeholder="내용을 입력해주세요" style="resize: none;">
+												</textarea>																			
+											    <script>
+											    CKEDITOR.replace('p_content'
+										                , {height: 500                                                  
+										                 });
+
+											 	</script>							
+											</div>
+											
+											<div class="form-group">
+												<label for="content">파일1 첨부하기</label>
+												<input type="file" name="file1" id="file1">
 											</div>
 											<div class="form-group">
-												<a href="list" role="button" class="btn btn-primary">
-													<i class="fa fa-list"></i> 목록
+												<label for="content">파일2 첨부하기</label>
+												<input type="file" name="file2" id="file2">
+											</div>
+											<div class="form-group">
+												<label for="content">파일3 첨부하기</label>
+												<input type="file" name="file3" id="file3">
+											</div>
+											<div class="form-group">
+												<label for="content">파일4 첨부하기</label>
+												<input type="file" name="file4" id="file4">
+											</div>
+											<div class="form-group">
+												<label for="content">파일5 첨부하기</label>
+												<input type="file" name="file5" id="file5">
+											</div>
+											
+											<div class="form-group">
+												<a href="list" role="button" class="btn btn-primary"> <i
+													class="fa fa-list"></i> 목록
 												</a>
 
 												<button type="reset" class="btn btn-warning">
@@ -195,7 +238,7 @@
 								</form>
 							</div>
 						</div>
-						
+
 					</div>
 				</div>
 			</div>
@@ -211,61 +254,40 @@
 
 
 	<!-- 푸터 -->
-	<div
-		class="position-relative page-footer font-small footerdesign pt-3 mt-5">
-		<!-- Footer Links -->
-		<div class="container text-center text-md-left">
-			<!-- Grid row -->
-			<div class="row">
-				<!-- Grid column -->
-				<div class="col-md-8">
-					<!-- Content -->
-					<h4 class="bold" style="margin-bottom: 5%;">컴퓨터 소프트웨어공학과</h4>
-					<p>47340 부산광역시 부산진구 엄광로 176 (가야동) 정보공학관 9층</p>
-					<p>Tel.051-890-1114 Fax.051-890-123</p>
-				</div>
-				<hr class="clearfix w-100 d-md-none pb-3">
-				<div class="col-md-2">
-					<h4 class="bold" style="margin-bottom: 10%;">관련 링크</h4>
-					<ul class="list-unstyled">
-						<li style="margin-bottom: 1%;"><a href="https://deu.ac.kr">동의대학교
-								홈페이지</a></li>
-						<li style="margin-bottom: 1%;"><a href="#!">입학정보</a></li>
-					</ul>
-				</div>
-				<div class="col-md-2">
-					<h4 class="bold" style="margin-bottom: 10%;">학과 SNS</h4>
-					<ul class="list-unstyled">
-						<li style="margin-bottom: 1%;"><a href="#!">Instagram</a></li>
-						<li style="margin-bottom: 1%;"><a href="#!">Facebook</a></li>
-					</ul>
-				</div>
+	<footer class="mt-3 pt-2 section footer-classic context-dark" style="background: #fff;border-top:1px solid #ddd;">
+	<div class="container">
+		<div class="row py-3">
+			<div class="col-md-3 offset-md-3 mb-sm-4">
+				<img class="w-100" src="<c:url value="/resources/images/logo.png"/>"/>
 			</div>
+			<div class="col-md-6">
+					<div class="footertext">47340 부산광역시 부산진구 엄광로 176 (가야동) 정보공학관 9층</div>
+					<div class="footertext">Tel.051-890-1114 Fax.051-890-123<br></div>
+					<div class="copyright">Copyright 2019. DONGEUI UNIVERSITY S.E. MAJOR All Rights Reserved.</div>
+			</div>
+			
 		</div>
 	</div>
-	<script>
-		$(document).ready(function() {
-
-			var formObj = $("form[role='form']");
-			console.log(formObj);
-
-			$(".modBtn").on("click", function() {
-				formObj.attr("action", "/notice/modify");
-				formObj.attr("method", "get");
-				formObj.submit();
-			});
-
-			$(".delBtn").on("click", function() {
-				formObj.attr("action", "/notice/remove");
-				formObj.submit();
-			});
-
-			$(".listBtn").on("click", function() {
-				self.location = "/notice/list"
-			});
-
-		});
-	</script>
+	<div class="row no-gutters social-container banner-background3">
+		<div class="col">
+			<a class="social-inner" href="https://www.deu.ac.kr/www"><span
+				class="icon mdi mdi-facebook"></span><span>동의대학교 홈</span></a>
+		</div>
+		<div class="col">
+			<a class="social-inner" href="https://urp.deu.ac.kr/loginDeuF.aspx"><span
+				class="icon mdi mdi-instagram"></span><span>종합정보시스템</span></a>
+		</div>
+		<div class="col">
+			<a class="social-inner" href="https://dap.deu.ac.kr/sso/login.aspx"><span
+				class="icon mdi mdi-twitter"></span><span>학생경력관리포탈</span></a>
+		</div>
+		<div class="col">
+			<a class="social-inner" href="http://sugang.deu.ac.kr:8080/DEUSugang_Login.aspx"><span
+				class="icon mdi mdi-youtube-play"></span><span>수강신청시스템</span></a>
+		</div>
+	</div>
+	</footer>
+	
 </body>
 
 </html>

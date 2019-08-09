@@ -1,6 +1,7 @@
 package com.deu.webapp.service;
 
 import java.util.List;
+import java.util.Map;
 
 import com.deu.webapp.VO.BoardVO;
 import com.deu.webapp.VO.Criteria;
@@ -9,7 +10,8 @@ public interface BoardService {
     /* 비즈니스 로직인 서비스 계층을 정의하는 인터페이스 */
     
     public void create(BoardVO vo) throws Exception;
-    
+	public void create_file(BoardVO vo) throws Exception;
+
     public List<BoardVO> listAll() throws Exception;
     
     public BoardVO read(Integer postno) throws Exception;
@@ -23,6 +25,9 @@ public interface BoardService {
     public int countBoard(Criteria criteria) throws Exception;
     
     public List<BoardVO> getcurrentContents() throws Exception;
+    
+    public List<Map<String,Object>> fileread(Integer postno) throws Exception;
+
 
 }
 

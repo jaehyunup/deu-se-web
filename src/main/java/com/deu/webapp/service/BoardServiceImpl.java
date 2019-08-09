@@ -1,6 +1,7 @@
 package com.deu.webapp.service;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -18,6 +19,11 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public void create(BoardVO vo) throws Exception {
 		dao.create(vo);
+	}
+	
+	@Override
+	public void create_file(BoardVO vo) throws Exception {
+		dao.create_file(vo);
 	}
 
 	@Override
@@ -57,6 +63,11 @@ public class BoardServiceImpl implements BoardService {
 		// TODO Auto-generated method stub
 		return dao.listCurrentContents();
 	}
+	
+    public List<Map<String,Object>> fileread(Integer postno) throws Exception{
+    	return dao.fileread(postno);
+    };
+
 	
 
 }

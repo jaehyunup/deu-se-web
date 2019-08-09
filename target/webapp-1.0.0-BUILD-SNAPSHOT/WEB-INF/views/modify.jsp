@@ -8,6 +8,8 @@
 <html>
 <% request.setCharacterEncoding("UTF-8"); %>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <!-- import jQuery -->
 <script src="<c:url value="/resources/js/jQuery/jquery-3.4.1.min.js" />"></script>
 <!-- import custom CSS -->
@@ -32,24 +34,14 @@
 
 
 <body>
-
-	<!--최상단 네비바 -->
-	<nav class="navbar float-top navbar-expand-lg"
-		style="padding:0.5% 2% 0.5% 2%;">
-	<button class="navbar-toggler" type="button" data-toggle="collapse"
-		data-target="#navbarText" aria-controls="navbarText"
-		aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<a class="navbar-brand flex-lg-row" href="/webapp/home"
-		class="d-inline-block"> <img src="resources/images/logo.png"
-		style="width: 35%; height: auto;" alt="" /> <span class="navbar-text"
-		style="color: rgba(44, 44, 44, 0.9); border-left: 1px solid #999; margin-left: 2%; padding-left: 4%; font-size: 1.1rem; font-family: 'Noto Sans KR'; font-weight: 400 !important;">
-			컴퓨터소프트웨어공학과</span>
-	</a> </nav>
-
-	<!--메뉴 네비바 -->
+	<div class="container py-2">
+	<!--메뉴네비바 -->
 	<nav id="menunav" class="navbar float-top navbar-expand-lg">
+		<a class="navbar-brand" href="/webapp/home" class="d-inline-block"> <img src="<c:url value="/resources/images/logo.png" />"/></a>  
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 	<div class="collapse navbar-collapse" id="navbarText">
 		<ul class="navbar-nav mx-auto">
 			<li class="nav-item"><a class="nav-link" href="/webapp/home">
@@ -76,20 +68,8 @@
 				</div></li>
 			<li class="nav-item"><a class="nav-link menutext"
 				href="#home"> 공학인증제도 </a></li>
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
-				aria-haspopup="true" aria-expanded="false" href="overview"> 교수진
-			</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					<a class="dropdown-item submenutext" href="#">김태석 교수님</a> <a
-						class="dropdown-item submenutext" href="#">권오준 교수님</a> <a
-						class="dropdown-item submenutext" href="#">권순각 교수님</a> <a
-						class="dropdown-item submenutext" href="#">김성우 교수님</a> <a
-						class="dropdown-item submenutext" href="#">이종민 교수님</a> <a
-						class="dropdown-item submenutext" href="#">박유현 교수님</a> <a
-						class="dropdown-item submenutext" href="#">임영호 교수님</a> <a
-						class="dropdown-item submenutext" href="#">장희숙 교수님</a>
-				</div> </a></li>
+			<li class="nav-item"><a class="nav-link menutext"
+				href="professor"> 교수진 </a></li>
 			<li class="nav-item dropdown active"><a
 				class="nav-link dropdown-toggle menutext" data-toggle="dropdown"
 				aria-haspopup="true" aria-expanded="false" href="list"> 게시판
@@ -101,6 +81,7 @@
 		</ul>
 	</div>
 	</nav>
+	</div>
 	<!-- 메뉴네비바끝 -->
 
 
@@ -205,39 +186,40 @@
 
 
 
-	<!-- 푸터 -->
-	<div
-		class="position-relative page-footer font-small footerdesign pt-3 mt-5">
-		<!-- Footer Links -->
-		<div class="container text-center text-md-left">
-			<!-- Grid row -->
-			<div class="row">
-				<!-- Grid column -->
-				<div class="col-md-8">
-					<!-- Content -->
-					<h4 class="bold" style="margin-bottom: 5%;">컴퓨터 소프트웨어공학과</h4>
-					<p>47340 부산광역시 부산진구 엄광로 176 (가야동) 정보공학관 9층</p>
-					<p>Tel.051-890-1114 Fax.051-890-123</p>
-				</div>
-				<hr class="clearfix w-100 d-md-none pb-3">
-				<div class="col-md-2">
-					<h4 class="bold" style="margin-bottom: 10%;">관련 링크</h4>
-					<ul class="list-unstyled">
-						<li style="margin-bottom: 1%;"><a href="https://deu.ac.kr">동의대학교
-								홈페이지</a></li>
-						<li style="margin-bottom: 1%;"><a href="#!">입학정보</a></li>
-					</ul>
-				</div>
-				<div class="col-md-2">
-					<h4 class="bold" style="margin-bottom: 10%;">학과 SNS</h4>
-					<ul class="list-unstyled">
-						<li style="margin-bottom: 1%;"><a href="#!">Instagram</a></li>
-						<li style="margin-bottom: 1%;"><a href="#!">Facebook</a></li>
-					</ul>
-				</div>
+<!-- 푸터 -->
+	<footer class=" mt-3 pt-2 section footer-classic context-dark" style="background: #fff;border-top:1px solid #ddd;">
+	<div class="container">
+		<div class="row py-3">
+			<div class="col-md-3 offset-md-3 mb-sm-4">
+				<img class="w-100" src="<c:url value="/resources/images/logo.png"/>"/>
 			</div>
+			<div class="col-md-6">
+					<div class="footertext">47340 부산광역시 부산진구 엄광로 176 (가야동) 정보공학관 9층</div>
+					<div class="footertext">Tel.051-890-1114 Fax.051-890-123<br></div>
+					<div class="copyright">Copyright 2019. DONGEUI UNIVERSITY S.E. MAJOR All Rights Reserved.</div>
+			</div>
+			
 		</div>
 	</div>
+	<div class="row no-gutters social-container banner-background3">
+		<div class="col">
+			<a class="social-inner" href="https://www.deu.ac.kr/www"><span
+				class="icon mdi mdi-facebook"></span><span>동의대학교 홈</span></a>
+		</div>
+		<div class="col">
+			<a class="social-inner" href="https://urp.deu.ac.kr/loginDeuF.aspx"><span
+				class="icon mdi mdi-instagram"></span><span>종합정보시스템</span></a>
+		</div>
+		<div class="col">
+			<a class="social-inner" href="https://dap.deu.ac.kr/sso/login.aspx"><span
+				class="icon mdi mdi-twitter"></span><span>학생경력관리포탈</span></a>
+		</div>
+		<div class="col">
+			<a class="social-inner" href="http://sugang.deu.ac.kr:8080/DEUSugang_Login.aspx"><span
+				class="icon mdi mdi-youtube-play"></span><span>수강신청시스템</span></a>
+		</div>
+	</div>
+	</footer>
 	<script>
 		$(document).ready(function() {
 

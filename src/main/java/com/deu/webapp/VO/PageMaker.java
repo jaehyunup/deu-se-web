@@ -1,5 +1,5 @@
 package com.deu.webapp.VO;
-
+import com.deu.webapp.VO.Criteria;
 public class pageMaker {
 
     public int totalCount;

@@ -101,7 +101,7 @@
 			<div class="carousel-inner" role="listbox">
 				<div class="carousel-item active">
 					<!--Mask color-->
-					<div class="view mh-80">
+					<div class="view">
 						<img class="w-100"
 							src="<c:url value="/resources/images/slider1.jpg" />"
 							alt="Second slide"
@@ -110,7 +110,7 @@
 				</div>
 				<div class="carousel-item">
 					<!--Mask color-->
-					<div class="view mh-80">
+					<div class="view">
 						<img class="w-100"
 							src="<c:url value="/resources/images/slider2.jpg" />"
 							alt="Third slide"

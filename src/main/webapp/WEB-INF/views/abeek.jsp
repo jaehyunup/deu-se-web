@@ -162,7 +162,7 @@
 								</div>
 
 								<div class="tab-pane" id="tab_b">
-									<div class="container-fluid mb-5">
+									<div class="container mb-5">
 										<div class="row">
 											<div class="col-md-12">
 											<h5 style="margin-bottom:1%;font-weight:700;font-size:1.2rem;color:#333;

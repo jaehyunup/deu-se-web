@@ -4,7 +4,14 @@ html {
 	font-size: 13px;
 }
 
-
+textarea{
+width: 100%;
+      resize: none;
+      overflow-y: hidden; /* prevents scroll bar flash */
+      padding: 1.1em; /* prevents text jump on Enter keypress */
+      padding-bottom: 0.2em;
+      line-height: 1.6;
+}
 /*탑바*/
 ul.topbar {
 	list-style: none;
@@ -570,6 +577,10 @@ background: linear-gradient(200deg, #eb7938, #f0874b);
 
 .footer-classic a, .footer-classic a:focus, .footer-classic a:active {
     color: #ffffff;
+}
+
+.nav{
+	font-family:'Noto Sans KR';
 }
 .nav-list li {
     padding-top: 5px;

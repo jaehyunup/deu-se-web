@@ -5,6 +5,11 @@
 <configuration>
 	<!--패키지명환경변수설정 -->
 	<typeAliases>
-        <package name="com.deu.webapp.VO"/>
+        <typeAlias type="com.deu.webapp.VO.UserVO" alias="UserVO"></typeAlias>
+        <typeAlias type="com.deu.webapp.VO.BoardVO" alias="BoardVO"></typeAlias>
+        <typeAlias type="com.deu.webapp.VO.FileVO" alias="FileVO"></typeAlias>
+        
     </typeAliases>
+    
+
 </configuration>

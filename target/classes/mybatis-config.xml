@@ -7,6 +7,8 @@
 	<typeAliases>
         <typeAlias type="com.deu.webapp.VO.UserVO" alias="UserVO"></typeAlias>
         <typeAlias type="com.deu.webapp.VO.BoardVO" alias="BoardVO"></typeAlias>
+        <typeAlias type="com.deu.webapp.VO.FileVO" alias="FileVO"></typeAlias>
+        
     </typeAliases>
     
 

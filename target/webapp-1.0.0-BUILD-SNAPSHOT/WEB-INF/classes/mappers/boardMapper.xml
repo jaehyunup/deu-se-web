@@ -12,8 +12,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <insert id="insertBoard">
         insert into NOTICE (posttitle,postwriter,postmemo) 
         values(#{posttitle},#{postwriter},#{postmemo})
+        <selectKey keyProperty="postno" resultType="java.lang.Integer" order="AFTER">
+	       	SELECT LAST_INSERT_ID()
+   	 	</selectKey>
     </insert>
 
+	<insert id="insertBoard_filePath">
+		insert into NOTICE_FILE(postno,filepath)
+		values(#{postno},#{FilePath})
+	</insert>
+	
+	
 	<!-- 글 전체 조회 -->
     <select id="listBoard" resultType="BoardVO">
         select * 
@@ -21,6 +30,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         order by postno DESC
     </select>
     
+    <select id="listCurrentContents" resultType="BoardVO">
+    	select * 
+        from NOTICE
+        order by postno DESC
+        LIMIT 0,5
+    </select>
     
     <select id="listCriteria" resultType="BoardVO">
         <![CDATA[

@@ -4,6 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <%
@@ -31,9 +32,16 @@
 	rel="stylesheet">
 <!--import PDF Viewer (pdfjs) -->
 <script src="<c:url value="/resources/js/pdfjs/build/pdf.js" />"></script>
+<!-- import ckeditor -->
+<script type="text/javascript" src="<c:url value="/ckeditor/ckeditor.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/ckfinder/ckfinder.js"/>"></script>
 
 <title>동의대학교 컴퓨터소프트웨어 공학과</title>
 </head>
+
+<style>
+
+</style>
 <script>
 		$(document).ready(function() {
 
@@ -164,8 +172,7 @@
 						<!--메인컨텐츠 시작-->
 						<div class="col-xl-12">
 							<div class="col-lg-12">
-								<form role="form" id="writeForm" method="post"
-									action="writeNotice">
+								<form role="form" id="writeForm" method="post" enctype="multipart/form-data" action="writeNotice">
 									<div class="box box-primary">
 										<div class="box-header with-border">
 											<h3 class="box-title">게시글 작성</h3>
@@ -175,15 +182,44 @@
 												<label for="title">제목</label> <input class="form-control"
 													id="title" name="posttitle" placeholder="제목을 입력해주세요">
 											</div>
+											
 											<div class="form-group">
 												<label for="writer">작성자</label> <input class="form-control"
 													id="writer" name="postwriter" value="ADMIN">
 											</div>
 											<div class="form-group">
 												<label for="content">내용</label>
-												<textarea class="form-control" id="content" name="postmemo"
-													rows="30" placeholder="내용을 입력해주세요" style="resize: none;"></textarea>
+												<textarea class="form-control" id="p_content" name="postmemo"
+													rows="30">
+												</textarea>																			
+											    <script type="text/javascript">
+       											 var editor = CKEDITOR.replace('p_content',{height:500});
+
+    											</script>
+					
 											</div>
+											
+											<div class="form-group">
+												<label for="content">파일1 첨부하기</label>
+												<input type="file" name="file1" id="file1">
+											</div>
+											<div class="form-group">
+												<label for="content">파일2 첨부하기</label>
+												<input type="file" name="file2" id="file2">
+											</div>
+											<div class="form-group">
+												<label for="content">파일3 첨부하기</label>
+												<input type="file" name="file3" id="file3">
+											</div>
+											<div class="form-group">
+												<label for="content">파일4 첨부하기</label>
+												<input type="file" name="file4" id="file4">
+											</div>
+											<div class="form-group">
+												<label for="content">파일5 첨부하기</label>
+												<input type="file" name="file5" id="file5">
+											</div>
+											
 											<div class="form-group">
 												<a href="list" role="button" class="btn btn-primary"> <i
 													class="fa fa-list"></i> 목록
